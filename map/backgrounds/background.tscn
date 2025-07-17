@@ -29,7 +29,7 @@ script = ExtResource("1_1koha")
 z_index = -4096
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(855, 539)
-repeat_times = 6
+repeat_times = 10
 
 [node name="HellBGSprite" type="Sprite2D" parent="HellBG"]
 texture_repeat = 2
@@ -38,12 +38,13 @@ scale = Vector2(0.668371, 0.748612)
 texture = ExtResource("2_efkv3")
 
 [node name="StartBG" type="Node2D" parent="."]
+visible = false
 
 [node name="Color" type="Parallax2D" parent="StartBG"]
 scroll_scale = Vector2(0.05, 0.05)
 scroll_offset = Vector2(-1889, -257)
 repeat_size = Vector2(1900, 1000)
-repeat_times = 3
+repeat_times = 5
 
 [node name="TextureRect" type="TextureRect" parent="StartBG/Color"]
 offset_left = 499.0
@@ -58,7 +59,7 @@ texture = SubResource("GradientTexture2D_kxmgb")
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(1000, 500)
 autoscroll = Vector2(-10, -8)
-repeat_times = 4
+repeat_times = 10
 
 [node name="Mainbg" type="Sprite2D" parent="StartBG/Image1"]
 texture = ExtResource("3_0wqav")
@@ -70,7 +71,7 @@ scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-145, -150)
 repeat_size = Vector2(1000, 500)
 autoscroll = Vector2(-1, -0.5)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Mainbg" type="Sprite2D" parent="StartBG/Image2"]
 texture = ExtResource("3_0wqav")
