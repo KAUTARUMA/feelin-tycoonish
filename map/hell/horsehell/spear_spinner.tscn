@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40aabevqo862"]
+
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="1_75ad7"]
+[ext_resource type="Script" uid="uid://cxdg5ouw20ydq" path="res://map/hell/horsehell/spear.gd" id="2_ceh8i"]
+
+[node name="SpearSpinner" type="StaticBody2D"]
+
+[node name="Base" type="Polygon2D" parent="."]
+z_index = -1
+position = Vector2(188.889, -1031.32)
+scale = Vector2(1.54153, 2.05697)
+color = Color(0.75, 0.75, 0.75, 1)
+polygon = PackedVector2Array(-169.889, 446.444, -127.936, 446.444, -83, 446.444, -83, 556, -169.889, 556)
+script = ExtResource("1_75ad7")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="Spear" type="StaticBody2D" parent="."]
+position = Vector2(-0.012413, 0.99823)
+rotation = 1.5756
+scale = Vector2(0.0805774, 0.547661)
+script = ExtResource("2_ceh8i")
+
+[node name="Polygon2D18" type="Polygon2D" parent="Spear"]
+position = Vector2(-73.8867, 209.27)
+scale = Vector2(1.98434, 2.6035)
+polygon = PackedVector2Array(136.461, -1.92188, 49.8203, 5.44141, -49.6367, 0.0351563, 64.4961, 74.8203)
+script = ExtResource("1_75ad7")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="Polygon2D17" type="Polygon2D" parent="Spear"]
+z_index = -1
+position = Vector2(21.7705, 0.396484)
+scale = Vector2(2.26237, 1.41216)
+color = Color(0.442911, 0.442911, 0.44291, 1)
+polygon = PackedVector2Array(-49.6484, 0.0332031, 37.2227, -0.0273438, 42.0547, 147.873, 17.1484, 236.313, -44.8164, 147.934)
+script = ExtResource("1_75ad7")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"

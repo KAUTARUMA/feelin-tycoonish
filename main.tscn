@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://db1u8s1mpmh25"]
 
 [ext_resource type="PackedScene" uid="uid://bdukqnlgcdg3b" path="res://map/map.tscn" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bscqrhas5tiqu" path="res://player/player.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bscqrhas5tiqu" path="res://global_assets/player/player.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://vtpd4rhriseg" path="res://ui/ui.tscn" id="3_h2yge"]
 
 [node name="Node2D" type="Node2D"]
@@ -9,6 +9,6 @@
 [node name="Map" parent="." instance=ExtResource("1_1bvp3")]
 
 [node name="Player" parent="." instance=ExtResource("1_h2yge")]
-position = Vector2(679, 435)
+position = Vector2(685, 453)
 
 [node name="UI" parent="." instance=ExtResource("3_h2yge")]

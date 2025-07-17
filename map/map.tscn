@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdukqnlgcdg3b"]
+[gd_scene load_steps=9 format=3 uid="uid://bdukqnlgcdg3b"]
 
-[ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start.tscn" id="1_a0dt8"]
+[ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
 [ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
-[ext_resource type="PackedScene" uid="uid://crc7jr6ql6fna" path="res://map/hell.tscn" id="2_4hjbm"]
+[ext_resource type="PackedScene" uid="uid://crc7jr6ql6fna" path="res://map/hell/hell.tscn" id="2_4hjbm"]
 [ext_resource type="Script" uid="uid://b7vwm3thj0fwj" path="res://map/death_barrier.gd" id="3_4hjbm"]
-[ext_resource type="PackedScene" uid="uid://gmwttqxt1a4p" path="res://map/sock_zone.tscn" id="4_9as7b"]
-[ext_resource type="Script" uid="uid://ckss0eshbbfyq" path="res://map/background_area.gd" id="6_7lyie"]
+[ext_resource type="Script" path="res://map/background_area.gd" id="6_7lyie"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a0dt8"]
 
@@ -13,7 +12,7 @@
 size = Vector2(6884, 2996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lyie"]
-size = Vector2(18576, 4401)
+size = Vector2(20141, 4401)
 
 [node name="Map" type="Node2D"]
 
@@ -23,8 +22,6 @@ size = Vector2(18576, 4401)
 
 [node name="Hell" parent="." instance=ExtResource("2_4hjbm")]
 position = Vector2(3112, 5965)
-
-[node name="SockZone" parent="." instance=ExtResource("4_9as7b")]
 
 [node name="DeathBarrier" type="Area2D" parent="."]
 position = Vector2(2076, 8114)
@@ -47,7 +44,7 @@ script = ExtResource("6_7lyie")
 bg_name = "HellBG"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HellBGArea"]
-position = Vector2(8390, 828.5)
+position = Vector2(9172.5, 828.5)
 shape = SubResource("RectangleShape2D_7lyie")
 
 [connection signal="body_shape_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_shape_entered"]

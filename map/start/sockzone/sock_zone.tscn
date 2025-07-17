@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://bqt7ggm3eiiq7"]
+
+[ext_resource type="Texture2D" uid="uid://c37dfa7ulse7q" path="res://map/start/sockzone/house.png" id="1_1f1e4"]
+[ext_resource type="Texture2D" uid="uid://nsqeutbe0s4e" path="res://map/start/sockzone/sox2.png" id="2_cjukr"]
+[ext_resource type="Texture2D" uid="uid://ok43e78r8kiw" path="res://map/start/sockzone/sock2.jpg" id="3_qdmco"]
+[ext_resource type="Texture2D" uid="uid://b54wohynwr0yy" path="res://map/start/sockzone/sock.jpg" id="4_didc5"]
+[ext_resource type="Shader" uid="uid://babq43pmhqhvn" path="res://shaders/hue.gdshader" id="5_x6u66"]
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="6_cjukr"]
+[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="6_dqs1e"]
+[ext_resource type="Script" uid="uid://db7m6uyrv8x35" path="res://map/start/sockzone/temmie_flakes_reminds_me_of_jeffy.gd" id="7_mnmdx"]
+[ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/wavy.gdshader" id="8_a2vf3"]
+[ext_resource type="Texture2D" uid="uid://b74btp8vqqqpk" path="res://map/start/sockzone/portal.png" id="9_dglsg"]
+[ext_resource type="Script" uid="uid://clvt7ddbgp25l" path="res://map/start/sockzone/press e.gd" id="10_mduxt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n3xu8"]
+font_size = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gn003"]
+shader = ExtResource("5_x6u66")
+shader_parameter/hue_shift_deg = 40.45
+shader_parameter/saturation = 0.73
+shader_parameter/value = 1.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qwgkx"]
+shader = ExtResource("8_a2vf3")
+shader_parameter/amplitude = 2.0
+shader_parameter/move_amount = 0.1
+shader_parameter/speed = 0.7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn003"]
+size = Vector2(190, 190)
+
+[node name="Sock zone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(778.13, 201.625)
+scale = Vector2(1.92162, 2.60425)
+texture = ExtResource("1_1f1e4")
+
+[node name="Sox2" type="Sprite2D" parent="."]
+position = Vector2(1763, 246)
+texture = ExtResource("2_cjukr")
+
+[node name="Label" type="Label" parent="Sox2"]
+offset_left = -476.0
+offset_top = -214.0
+offset_right = 266.0
+offset_bottom = -69.0
+text = "welcome to my sock shop
+
+youcant buy anything because i dont know how to program that
+hi"
+label_settings = SubResource("LabelSettings_n3xu8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sock2" type="Sprite2D" parent="Sox2"]
+position = Vector2(-361, 14)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("3_qdmco")
+
+[node name="Sock" type="Sprite2D" parent="Sox2"]
+position = Vector2(-593, 33)
+texture = ExtResource("4_didc5")
+
+[node name="Sox3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gn003")
+position = Vector2(2006, 374)
+scale = Vector2(0.541037, 0.476667)
+texture = ExtResource("2_cjukr")
+
+[node name="Label" type="Label" parent="Sox3"]
+offset_left = -185.0
+offset_top = -390.0
+offset_right = 44.0
+offset_bottom = -350.0
+scale = Vector2(1.91922, 3.44661)
+text = "Hey guys, its me! baby sock!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(0, 0.999878)
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground2"]
+color = Color(0.74902, 0.392157, 0.0588235, 1)
+polygon = PackedVector2Array(-54, 516, 32, 509, 311, 553, 588, 514, 2735, 506, 2734, 769, -71, 790)
+script = ExtResource("6_cjukr")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="WalkerButton" parent="." instance=ExtResource("6_dqs1e")]
+position = Vector2(391, 206)
+buyable_id = "dash"
+buyable_name = "celeste dash mechanic"
+price = 50
+
+[node name="Temmie flakes reminds me of jeffy" type="Area2D" parent="."]
+script = ExtResource("7_mnmdx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Temmie flakes reminds me of jeffy"]
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("ShaderMaterial_qwgkx")
+position = Vector2(780, 416.281)
+scale = Vector2(0.633664, 0.779605)
+texture = ExtResource("9_dglsg")
+script = ExtResource("10_mduxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temmie flakes reminds me of jeffy"]
+position = Vector2(780, 417)
+shape = SubResource("RectangleShape2D_gn003")

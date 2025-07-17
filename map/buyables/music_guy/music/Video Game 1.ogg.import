@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d4dwyuvphxtk1"
+path="res://.godot/imported/Video Game 1.ogg-2f5efc26f27cf6b29a9267b3376a1204.oggvorbisstr"
+
+[deps]
+
+source_file="res://map/buyables/music_guy/music/Video Game 1.ogg"
+dest_files=["res://.godot/imported/Video Game 1.ogg-2f5efc26f27cf6b29a9267b3376a1204.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
