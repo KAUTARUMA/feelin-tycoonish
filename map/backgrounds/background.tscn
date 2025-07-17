@@ -26,6 +26,7 @@ z_as_relative = false
 script = ExtResource("1_1koha")
 
 [node name="HellBG" type="Parallax2D" parent="."]
+visible = false
 z_index = -4096
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(855, 539)

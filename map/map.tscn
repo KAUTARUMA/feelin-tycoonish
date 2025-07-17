@@ -24,7 +24,7 @@ size = Vector2(18576, 4401)
 [node name="Hell" parent="." instance=ExtResource("2_4hjbm")]
 position = Vector2(3112, 5965)
 
-[node name="Sock zone" parent="." instance=ExtResource("4_9as7b")]
+[node name="SockZone" parent="." instance=ExtResource("4_9as7b")]
 
 [node name="DeathBarrier" type="Area2D" parent="."]
 position = Vector2(2076, 8114)

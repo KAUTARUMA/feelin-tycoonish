@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfqdcb4gp45i6"
-path="res://.godot/imported/costume4.svg-cf988a5ba28eebc8591fe5e8152d8c19.ctex"
+path.s3tc="res://.godot/imported/costume4.svg-cf988a5ba28eebc8591fe5e8152d8c19.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://map/hell/costume4.svg"
-dest_files=["res://.godot/imported/costume4.svg-cf988a5ba28eebc8591fe5e8152d8c19.ctex"]
+dest_files=["res://.godot/imported/costume4.svg-cf988a5ba28eebc8591fe5e8152d8c19.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
