@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://crc7jr6ql6fna"]
+[gd_scene load_steps=23 format=3 uid="uid://cmg6jlrsx2q7u"]
 
 [ext_resource type="Script" uid="uid://bi7q8kx45r5ul" path="res://map/buyables/death_buyable.gd" id="1_05ulx"]
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="2_4hjx4"]

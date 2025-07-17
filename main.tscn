@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdukqnlgcdg3b" path="res://map/map.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bscqrhas5tiqu" path="res://global_assets/player/player.tscn" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://vtpd4rhriseg" path="res://ui/ui.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" path="res://ui/ui.tscn" id="3_h2yge"]
 
 [node name="Node2D" type="Node2D"]
 

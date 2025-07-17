@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
 [ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
-[ext_resource type="PackedScene" uid="uid://crc7jr6ql6fna" path="res://map/hell/hell.tscn" id="2_4hjbm"]
+[ext_resource type="PackedScene" uid="uid://cmg6jlrsx2q7u" path="res://map/hell/hell.tscn" id="2_4hjbm"]
 [ext_resource type="Script" uid="uid://b7vwm3thj0fwj" path="res://map/death_barrier.gd" id="3_4hjbm"]
 [ext_resource type="Script" path="res://map/background_area.gd" id="6_7lyie"]
 
@@ -12,7 +12,7 @@
 size = Vector2(6884, 2996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lyie"]
-size = Vector2(20141, 4401)
+size = Vector2(17173, 4401)
 
 [node name="Map" type="Node2D"]
 
@@ -38,13 +38,17 @@ bg_name = "StartBG"
 position = Vector2(2544, 126)
 shape = SubResource("RectangleShape2D_kffv2")
 
+[node name="feelinfarmin placeholder" type="CollisionShape2D" parent="StartBGArea"]
+position = Vector2(16972, 4402)
+shape = SubResource("RectangleShape2D_kffv2")
+
 [node name="HellBGArea" type="Area2D" parent="."]
 position = Vector2(-2764, 4588)
 script = ExtResource("6_7lyie")
 bg_name = "HellBG"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HellBGArea"]
-position = Vector2(9172.5, 828.5)
+position = Vector2(7688.5, 828.5)
 shape = SubResource("RectangleShape2D_7lyie")
 
 [connection signal="body_shape_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_shape_entered"]

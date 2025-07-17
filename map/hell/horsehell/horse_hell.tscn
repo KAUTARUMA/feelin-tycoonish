@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csm6hrevkf01v"]
+[gd_scene load_steps=23 format=3 uid="uid://csm6hrevkf01v"]
 
 [ext_resource type="PackedScene" uid="uid://c40aabevqo862" path="res://map/hell/horsehell/spear_spinner.tscn" id="1_tgwan"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="2_52wd3"]
@@ -16,10 +16,16 @@
 [ext_resource type="Script" uid="uid://bw1q7j8acgsvs" path="res://map/hell/horsehell/ff_pigtal_right.gd" id="14_2jl2p"]
 [ext_resource type="Texture2D" uid="uid://conbfmbrmf18" path="res://map/hell/horsehell/ff_pigtail left.png" id="15_n3u1q"]
 [ext_resource type="Script" uid="uid://dxdphiha5ynha" path="res://map/hell/horsehell/ff_pigtail_left.gd" id="16_5fte6"]
+[ext_resource type="Script" uid="uid://dpiqm4dgtv3n6" path="res://map/hell/horsehell/feelinfarmintalk.gd" id="16_ishg7"]
 [ext_resource type="Texture2D" uid="uid://6u473opkkdp6" path="res://map/hell/horsehell/feelinfarmin_notalk.png" id="17_lho6h"]
+[ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="17_ujslt"]
+[ext_resource type="AudioStream" uid="uid://75sxfnaraska" path="res://map/hell/horsehell/ff voice.wav" id="18_j8shq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r048i"]
 size = Vector2(634, 117.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf7to"]
+size = Vector2(312.79, 530.835)
 
 [node name="HorseHell" type="Node2D"]
 
@@ -149,6 +155,27 @@ script = ExtResource("16_5fte6")
 position = Vector2(0, -113.774)
 scale = Vector2(0.460372, 0.474724)
 texture = ExtResource("17_lho6h")
+script = ExtResource("16_ishg7")
+
+[node name="TalkingSpeechBubble" parent="Feelin Farmin\'/Feelinfarmin" instance=ExtResource("17_ujslt")]
+anchors_preset = -1
+anchor_top = -0.064
+anchor_right = 0.286
+anchor_bottom = 0.097
+offset_left = 143.0
+offset_top = -355.696
+offset_right = 450.33
+offset_bottom = -266.992
+scale = Vector2(2, 2)
+sound = ExtResource("18_j8shq")
+text = "test test test test. another one for good measure: test"
+
+[node name="TalkHitbox" type="Area2D" parent="Feelin Farmin\'/Feelinfarmin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Feelin Farmin\'/Feelinfarmin/TalkHitbox"]
+position = Vector2(6.12549, -2.58258)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vf7to")
 
 [node name="HonseButton" parent="." instance=ExtResource("8_5n3u1")]
 position = Vector2(1048.88, -597)
@@ -178,3 +205,4 @@ region_enabled = true
 region_rect = Rect2(0, 0, 303.929, 29)
 
 [connection signal="body_entered" from="Horseplants" to="Horseplants" method="_on_body_entered"]
+[connection signal="body_entered" from="Feelin Farmin\'/Feelinfarmin/TalkHitbox" to="Feelin Farmin\'/Feelinfarmin" method="_on_talk_hitbox_body_entered"]
