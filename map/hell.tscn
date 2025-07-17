@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://crc7jr6ql6fna"]
+[gd_scene load_steps=37 format=3 uid="uid://crc7jr6ql6fna"]
 
 [ext_resource type="Script" uid="uid://bi7q8kx45r5ul" path="res://buyables/death_buyable.gd" id="1_05ulx"]
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://buyables/button/buyable_button.tscn" id="2_4hjx4"]
@@ -27,6 +27,17 @@
 [ext_resource type="Texture2D" uid="uid://dywwven250kyq" path="res://buyables/honse/69.png" id="25_nftfw"]
 [ext_resource type="Texture2D" uid="uid://cj23vt0eunqut" path="res://buyables/honse/honse_hd.png" id="25_sxaul"]
 [ext_resource type="AudioStream" uid="uid://ni2ifvhyy5my" path="res://buyables/honse/new_horse.mp3" id="26_sumad"]
+[ext_resource type="Texture2D" uid="uid://dvb11hskcae84" path="res://map/hell/ff_pigtal right.png" id="28_c7ooc"]
+[ext_resource type="Script" uid="uid://b7c5cdi3e7jku" path="res://map/horseplants sound.gd" id="28_egjbq"]
+[ext_resource type="Texture2D" uid="uid://conbfmbrmf18" path="res://map/hell/ff_pigtail left.png" id="29_3eect"]
+[ext_resource type="Script" uid="uid://bw1q7j8acgsvs" path="res://map/ff_pigtal_right.gd" id="29_4nbci"]
+[ext_resource type="PackedScene" uid="uid://dl1845cjgu2q7" path="res://map/hell/horseplant.tscn" id="29_egjbq"]
+[ext_resource type="Script" uid="uid://dxdphiha5ynha" path="res://map/ff_pigtail_left.gd" id="30_3eect"]
+[ext_resource type="Texture2D" uid="uid://6u473opkkdp6" path="res://map/hell/feelinfarmin_notalk.png" id="30_4nbci"]
+[ext_resource type="AudioStream" uid="uid://dy26tq2qdkbm1" path="res://map/hell/Horse Neigh LOUDLOUDLOUD .wav" id="30_qbc2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r048i"]
+size = Vector2(634, 117.5)
 
 [node name="Hell" type="Node2D"]
 
@@ -312,6 +323,15 @@ polygon = PackedVector2Array(-306.1, 761.4, -310.1, 465.4, 1085.9, 462, 1080.9, 
 position = Vector2(9067.82, -1622.4)
 color = Color(0.74902, 0.392157, 0.0588235, 1)
 polygon = PackedVector2Array(-175, 480, 1220.9, 477, 1215.9, 775.4, 529.898, 855.4, -172.102, 775.4)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(13843.9, 4524.52)
+polygon = PackedVector2Array(-306.1, 761.4, -310.1, 465.4, 2232.1, 462, 2230.1, 760.4, 394.9, 840.4)
+
+[node name="Polygon2D20" type="Polygon2D" parent="Ground"]
+position = Vector2(13708.9, 4509.52)
+color = Color(0.74902, 0.392157, 0.0588235, 1)
+polygon = PackedVector2Array(-175, 480, 2367.1, 477, 2360.1, 775.4, 529.898, 855.4, -172.102, 775.4)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2(6630.82, -769.4)
@@ -645,3 +665,66 @@ scale = Vector2(1, 1.52)
 texture = ExtResource("25_nftfw")
 region_enabled = true
 region_rect = Rect2(0, 0, 303.929, 29)
+
+[node name="Horseplants" type="Area2D" parent="."]
+position = Vector2(15497, 4983)
+script = ExtResource("28_egjbq")
+
+[node name="Horseplant" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(-8, -52)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="Horseplant2" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(80, -52)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="Horseplant3" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(168, -52)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="Horseplant4" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(256.301, -51.6997)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="Horseplant5" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(344.301, -51.6997)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="Horseplant6" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(432.301, -51.6997)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="Horseplant7" parent="Horseplants" instance=ExtResource("29_egjbq")]
+position = Vector2(521.301, -51.6997)
+scale = Vector2(1.76906, 1.76906)
+
+[node name="horse player" type="AudioStreamPlayer2D" parent="Horseplants"]
+stream = ExtResource("30_qbc2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horseplants"]
+position = Vector2(260, -48.25)
+shape = SubResource("RectangleShape2D_r048i")
+
+[node name="Feelin Farmin\'" type="Node2D" parent="."]
+
+[node name="FfPigtalRight" type="Sprite2D" parent="Feelin Farmin\'"]
+position = Vector2(15367, 4773)
+scale = Vector2(0.507687, 0.507687)
+texture = ExtResource("28_c7ooc")
+centered = false
+script = ExtResource("29_4nbci")
+
+[node name="FfPigtailLeft" type="Sprite2D" parent="Feelin Farmin\'"]
+position = Vector2(15313, 4772)
+scale = Vector2(0.528855, 0.528855)
+texture = ExtResource("29_3eect")
+centered = false
+offset = Vector2(-130, 0)
+script = ExtResource("30_3eect")
+
+[node name="Feelinfarmin" type="Sprite2D" parent="Feelin Farmin\'"]
+position = Vector2(15343.6, 4861.57)
+scale = Vector2(0.460372, 0.474724)
+texture = ExtResource("30_4nbci")
+
+[connection signal="body_entered" from="Horseplants" to="Horseplants" method="_on_body_entered"]
