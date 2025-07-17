@@ -34,14 +34,6 @@ shadow_color = Color(1, 0, 0.0166664, 1)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="BG" type="ColorRect" parent="."]
-offset_left = -1508.0
-offset_top = -1245.0
-offset_right = 4163.0
-offset_bottom = 1763.0
-mouse_filter = 1
-color = Color(0.529412, 0.411765, 0.227451, 1)
-
 [node name="Map" parent="." instance=ExtResource("1_1bvp3")]
 
 [node name="Player" parent="." instance=ExtResource("1_h2yge")]
@@ -122,7 +114,10 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.25, 1)
 text = "this game is sponsored by Isabel Colegate British author and literary agent
+
+Activate windos
 "
+horizontal_alignment = 2
 
 [node name="dashtext" type="Label" parent="CanvasLayer"]
 offset_left = 77.0
