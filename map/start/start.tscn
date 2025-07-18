@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=41 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://qost6xonh85d" path="res://map/start/shopkeeper/ouiyer.wav" id="18_p5ndp"]
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
+[ext_resource type="Texture2D" uid="uid://rew1fnyy15mf" path="res://map/start/casino hell sign.png" id="26_7cpad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("4_repp3")
@@ -315,8 +316,26 @@ shape = SubResource("RectangleShape2D_oawyc")
 
 [node name="PolygonCollisionAndShape" type="Polygon2D" parent="Ground"]
 color = Color(0.74902, 0.392157, 0.0588235, 1)
-polygon = PackedVector2Array(-54, 516, 32, 509, 357, 320, 588, 514, 2735, 506, 2734, 769, -71, 790)
+polygon = PackedVector2Array(-265, 516, 32, 509, 357, 320, 588, 514, 2735, 506, 2734, 769, -260, 790)
 script = ExtResource("24_5li7y")
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="Ground"]
+position = Vector2(-3167, -4)
+color = Color(0.105882, 0.0941176, 0.0627451, 1)
+polygon = PackedVector2Array(-74, 617, 2677, 620, 2677, 789, -71, 790)
+script = ExtResource("24_5li7y")
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="Ground"]
+position = Vector2(-3167, -108)
+color = Color(0.00392157, 0.196078, 0.129412, 1)
+polygon = PackedVector2Array(-105, 656, 2718, 667, 2720, 789, -105, 790)
+script = ExtResource("24_5li7y")
+
+[node name="CasinoHellSign" type="Sprite2D" parent="Ground"]
+z_index = -1
+position = Vector2(-311, 308)
+scale = Vector2(0.613636, 0.613636)
+texture = ExtResource("26_7cpad")
 
 [node name="SockZone" parent="." instance=ExtResource("19_5maui")]
 position = Vector2(2705, -4)
