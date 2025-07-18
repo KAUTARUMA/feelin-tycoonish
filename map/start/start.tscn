@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=53 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
@@ -26,9 +26,14 @@
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
 [ext_resource type="Texture2D" uid="uid://rew1fnyy15mf" path="res://map/start/casino hell sign.png" id="26_7cpad"]
+[ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://basketball/shun-ran john instrumental.mp3" id="27_0gjc5"]
 [ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://basketball/Table_BigChips_BlueLose.png" id="27_lxd1a"]
 [ext_resource type="Texture2D" uid="uid://b2b1vcy4gckx7" path="res://basketball/basketball walk.png" id="27_yg3ev"]
 [ext_resource type="Script" uid="uid://cynbmifixm8ox" path="res://map/start/basketball walking.gd" id="28_d5ykx"]
+[ext_resource type="Texture2D" uid="uid://bu5qtb2iskkx8" path="res://basketball/Table_Bowling.png" id="29_dhm0x"]
+[ext_resource type="Texture2D" uid="uid://co2d6btwefehx" path="res://basketball/Table_Parappa.png" id="30_vy4f5"]
+[ext_resource type="Texture2D" uid="uid://5de26mevsj2s" path="res://basketball/Table_Vacant.png" id="31_5maui"]
+[ext_resource type="Texture2D" uid="uid://dakgmm1ql017p" path="res://basketball/Table_Standard.png" id="32_0q1kr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("4_repp3")
@@ -380,12 +385,14 @@ polygon = PackedVector2Array(-265, 516, 32, 509, 357, 320, 588, 514, 2735, 506, 
 script = ExtResource("24_5li7y")
 
 [node name="PolygonCollisionAndShape2" type="Polygon2D" parent="Ground"]
+z_index = -1
 position = Vector2(-3167, -4)
 color = Color(0.105882, 0.0941176, 0.0627451, 1)
 polygon = PackedVector2Array(-74, 617, 2677, 620, 2677, 789, -71, 790)
 script = ExtResource("24_5li7y")
 
 [node name="PolygonCollisionAndShape3" type="Polygon2D" parent="Ground"]
+z_index = -1
 position = Vector2(-3167, -108)
 color = Color(0.00392157, 0.196078, 0.129412, 1)
 polygon = PackedVector2Array(-105, 656, 2718, 667, 2720, 789, -105, 790)
@@ -400,12 +407,36 @@ texture = ExtResource("26_7cpad")
 [node name="SockZone" parent="." instance=ExtResource("19_5maui")]
 position = Vector2(2705, -4)
 
-[node name="CasinoTables" type="Node2D" parent="."]
+[node name="Casino Props" type="Node2D" parent="."]
 position = Vector2(-796, 485)
 
-[node name="TableBigChipsBlueLose" type="Sprite2D" parent="CasinoTables"]
+[node name="Casino Music" type="AudioStreamPlayer2D" parent="Casino Props"]
+position = Vector2(-2363, 71)
+stream = ExtResource("27_0gjc5")
+volume_db = -10.895
+autoplay = true
+parameters/looping = true
+
+[node name="TableBigChipsBlueLose" type="Sprite2D" parent="Casino Props"]
 position = Vector2(0, -7.00003)
 texture = ExtResource("27_lxd1a")
+
+[node name="TableBowling" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-532, 2.99997)
+texture = ExtResource("29_dhm0x")
+
+[node name="TableParappa" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1115, 15)
+texture = ExtResource("30_vy4f5")
+
+[node name="TableVacant" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-2234, 14)
+texture = ExtResource("31_5maui")
+
+[node name="TableStandard" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1686, 13)
+texture = ExtResource("32_0q1kr")
 
 [node name="Basketball Walker" type="Node2D" parent="."]
 position = Vector2(-3080, 437)
