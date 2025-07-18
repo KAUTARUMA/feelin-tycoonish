@@ -1,15 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://gmwttqxt1a4p"]
 
-[ext_resource type="Texture2D" uid="uid://nsqeutbe0s4e" path="res://map/hell/sox2.png" id="1_h8u1v"]
-[ext_resource type="Texture2D" uid="uid://c37dfa7ulse7q" path="res://house.png" id="1_m5kev"]
-[ext_resource type="Texture2D" uid="uid://ok43e78r8kiw" path="res://map/hell/sock2.jpg" id="2_toctr"]
-[ext_resource type="Texture2D" uid="uid://b54wohynwr0yy" path="res://map/hell/sock.jpg" id="3_t5io7"]
-[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://buyables/button/buyable_button.tscn" id="4_toctr"]
+[ext_resource type="Texture2D" uid="uid://nsqeutbe0s4e" path="res://map/start/sockzone/sox2.png" id="1_h8u1v"]
+[ext_resource type="Texture2D" uid="uid://c37dfa7ulse7q" path="res://map/start/sockzone/house.png" id="1_m5kev"]
+[ext_resource type="Texture2D" uid="uid://ok43e78r8kiw" path="res://map/start/sockzone/sock2.jpg" id="2_toctr"]
+[ext_resource type="Texture2D" uid="uid://b54wohynwr0yy" path="res://map/start/sockzone/sock.jpg" id="3_t5io7"]
+[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="4_toctr"]
 [ext_resource type="Shader" uid="uid://babq43pmhqhvn" path="res://shaders/hue.gdshader" id="5_oiw30"]
-[ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/scary.gdshader" id="6_8006c"]
-[ext_resource type="Texture2D" uid="uid://b74btp8vqqqpk" path="res://portal.png" id="7_oiw30"]
-[ext_resource type="Script" path="res://map/temmie_flakes_reminds_me_of_jeffy.gd" id="7_qwgkx"]
-[ext_resource type="Script" path="res://map/press e.gd" id="9_qwgkx"]
+[ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/wavy.gdshader" id="6_8006c"]
+[ext_resource type="Texture2D" uid="uid://b74btp8vqqqpk" path="res://map/start/sockzone/portal.png" id="7_oiw30"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n3xu8"]
 font_size = 24
@@ -21,11 +19,17 @@ shader_parameter/saturation = 0.73
 shader_parameter/value = 1.0
 shader_parameter/alpha = 1.0
 
+[sub_resource type="Resource" id="Resource_8006c"]
+metadata/__load_path__ = "res://map/temmie_flakes_reminds_me_of_jeffy.gd"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qwgkx"]
 shader = ExtResource("6_8006c")
 shader_parameter/amplitude = 2.0
 shader_parameter/move_amount = 0.1
 shader_parameter/speed = 0.7
+
+[sub_resource type="Resource" id="Resource_oiw30"]
+metadata/__load_path__ = "res://map/press e.gd"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn003"]
 size = Vector2(190, 190)
@@ -94,7 +98,7 @@ buyable_name = "celeste dash mechanic"
 price = 50
 
 [node name="Temmie flakes reminds me of jeffy" type="Area2D" parent="."]
-script = ExtResource("7_qwgkx")
+script = SubResource("Resource_8006c")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Temmie flakes reminds me of jeffy"]
 texture_filter = 1
@@ -103,7 +107,7 @@ material = SubResource("ShaderMaterial_qwgkx")
 position = Vector2(3422, 415.281)
 scale = Vector2(0.633664, 0.779605)
 texture = ExtResource("7_oiw30")
-script = ExtResource("9_qwgkx")
+script = SubResource("Resource_oiw30")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Temmie flakes reminds me of jeffy"]
 position = Vector2(3422, 416)
