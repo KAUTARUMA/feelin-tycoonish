@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=56 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
@@ -34,6 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://co2d6btwefehx" path="res://basketball/Table_Parappa.png" id="30_vy4f5"]
 [ext_resource type="Texture2D" uid="uid://5de26mevsj2s" path="res://basketball/Table_Vacant.png" id="31_5maui"]
 [ext_resource type="Texture2D" uid="uid://dakgmm1ql017p" path="res://basketball/Table_Standard.png" id="32_0q1kr"]
+[ext_resource type="Texture2D" uid="uid://63el1v6fqg4w" path="res://basketball/cameos/Trafeus-Feelin.svg" id="33_5maui"]
+[ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="34_5maui"]
+[ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://basketball/cameos/Miguel-Feelin.svg" id="35_ap4hh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("4_repp3")
@@ -437,6 +440,18 @@ texture = ExtResource("31_5maui")
 [node name="TableStandard" type="Sprite2D" parent="Casino Props"]
 position = Vector2(-1686, 13)
 texture = ExtResource("32_0q1kr")
+
+[node name="Trafeus-feelin" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-631, -110)
+texture = ExtResource("33_5maui")
+script = ExtResource("34_5maui")
+
+[node name="Miguel-feelin" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-458, -77)
+rotation = 0.0879528
+texture = ExtResource("35_ap4hh")
 
 [node name="Basketball Walker" type="Node2D" parent="."]
 position = Vector2(-3080, 437)
