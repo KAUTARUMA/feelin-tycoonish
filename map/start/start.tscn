@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=44 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
@@ -25,6 +25,9 @@
 [ext_resource type="AudioStream" uid="uid://qost6xonh85d" path="res://map/start/shopkeeper/ouiyer.wav" id="18_p5ndp"]
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
+[ext_resource type="Texture2D" uid="uid://bta7xcejuxnx0" path="res://FNAF_WORLD.EXE_0x6D1D53B3.png" id="26_yg3ev"]
+[ext_resource type="AudioStream" uid="uid://xw23mswgbaal" path="res://zachSound.ogg" id="27_d5ykx"]
+[ext_resource type="Script" uid="uid://j2qhohws5lnv" path="res://map/start/zach_fazbear.gd" id="27_lxd1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("4_repp3")
@@ -220,6 +223,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oawyc"]
 size = Vector2(106, 132)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxd1a"]
+size = Vector2(69, 220)
+
 [node name="Start" type="Node2D"]
 
 [node name="WalkerButton" parent="." instance=ExtResource("1_2eqjb")]
@@ -304,6 +310,7 @@ offset_right = 200.0
 offset_bottom = -80.0
 sound = ExtResource("18_p5ndp")
 text = "i am ouiyer"
+metadata/_edit_use_anchors_ = true
 
 [node name="TalkHitbox" type="Area2D" parent="ShopKeeper"]
 
@@ -321,4 +328,26 @@ script = ExtResource("24_5li7y")
 [node name="SockZone" parent="." instance=ExtResource("19_5maui")]
 position = Vector2(2705, -4)
 
+[node name="zachFazbear" type="Sprite2D" parent="."]
+position = Vector2(1432, 401)
+texture = ExtResource("26_yg3ev")
+script = ExtResource("27_lxd1a")
+
+[node name="TalkingSpeechBubble" parent="zachFazbear" instance=ExtResource("17_oawyc")]
+offset_left = 22.0
+offset_top = -157.0
+offset_right = 202.0
+offset_bottom = -81.0
+sound = ExtResource("27_d5ykx")
+text = "hey guys its me zach fazbear"
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="zachFazbear"]
+position = Vector2(0, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zachFazbear/TalkHitbox"]
+position = Vector2(2.5, -32)
+shape = SubResource("RectangleShape2D_lxd1a")
+
 [connection signal="body_entered" from="ShopKeeper/TalkHitbox" to="ShopKeeper" method="_on_talk_hitbox_body_entered"]
+[connection signal="body_entered" from="zachFazbear/TalkHitbox" to="zachFazbear" method="_on_talk_hitbox_body_entered"]
