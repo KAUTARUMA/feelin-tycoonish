@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2b1vcy4gckx7"
-path="res://.godot/imported/basketball walk.png-e9e7bbda285f6bcca2c509b93e6b5feb.ctex"
+uid="uid://cj5ei5kbsxctl"
+path="res://.godot/imported/spritemap1.png-087873c07a51ce753c63d8a4880aa29a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://map/start/casino/basketball walk.png"
-dest_files=["res://.godot/imported/basketball walk.png-e9e7bbda285f6bcca2c509b93e6b5feb.ctex"]
+source_file="res://map/start/casino/basketball/spritemap1.png"
+dest_files=["res://.godot/imported/spritemap1.png-087873c07a51ce753c63d8a4880aa29a.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.0
+compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
