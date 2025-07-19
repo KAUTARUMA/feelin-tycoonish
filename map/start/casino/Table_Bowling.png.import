@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dakgmm1ql017p"
-path="res://.godot/imported/Table_Standard.png-7ad1bb73f0c2e24d8db52afd89bd034c.ctex"
+uid="uid://bu5qtb2iskkx8"
+path="res://.godot/imported/Table_Bowling.png-233a51c600eeed529dbb45f96dfa975d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basketball/Table_Standard.png"
-dest_files=["res://.godot/imported/Table_Standard.png-7ad1bb73f0c2e24d8db52afd89bd034c.ctex"]
+source_file="res://map/start/casino/Table_Bowling.png"
+dest_files=["res://.godot/imported/Table_Bowling.png-233a51c600eeed529dbb45f96dfa975d.ctex"]
 
 [params]
 

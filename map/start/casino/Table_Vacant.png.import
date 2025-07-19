@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://63el1v6fqg4w"
-path="res://.godot/imported/Trafeus-Feelin.svg-184c035295a2c0c3613b91465bd52c3f.ctex"
+uid="uid://5de26mevsj2s"
+path="res://.godot/imported/Table_Vacant.png-5e3b26136bfdc4f77f705a26e2df99d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basketball/cameos/Trafeus-Feelin.svg"
-dest_files=["res://.godot/imported/Trafeus-Feelin.svg-184c035295a2c0c3613b91465bd52c3f.ctex"]
+source_file="res://map/start/casino/Table_Vacant.png"
+dest_files=["res://.godot/imported/Table_Vacant.png-5e3b26136bfdc4f77f705a26e2df99d9.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

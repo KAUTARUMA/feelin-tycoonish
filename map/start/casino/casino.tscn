@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=3 uid="uid://cm0nnp5vaiqge"]
+
+[ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="1_01vfd"]
+[ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://map/start/casino/Table_BigChips_BlueLose.png" id="2_1yep1"]
+[ext_resource type="Texture2D" uid="uid://bu5qtb2iskkx8" path="res://map/start/casino/Table_Bowling.png" id="3_tedpa"]
+[ext_resource type="Texture2D" uid="uid://co2d6btwefehx" path="res://map/start/casino/Table_Parappa.png" id="4_j6btg"]
+[ext_resource type="Texture2D" uid="uid://5de26mevsj2s" path="res://map/start/casino/Table_Vacant.png" id="5_bjm4i"]
+[ext_resource type="Texture2D" uid="uid://dakgmm1ql017p" path="res://map/start/casino/Table_Standard.png" id="6_bo60h"]
+[ext_resource type="Texture2D" uid="uid://63el1v6fqg4w" path="res://map/start/casino/cameos/Trafeus-Feelin.svg" id="7_m1473"]
+[ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
+[ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://map/start/casino/cameos/Miguel-Feelin.svg" id="9_mcf8t"]
+[ext_resource type="Texture2D" uid="uid://b2b1vcy4gckx7" path="res://map/start/casino/basketball walk.png" id="10_bhste"]
+[ext_resource type="Script" uid="uid://cynbmifixm8ox" path="res://map/start/basketball walking.gd" id="11_d53f2"]
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="12_ylwr5"]
+
+[sub_resource type="Animation" id="Animation_33p1h"]
+resource_name = "IdleLook"
+length = 3.0
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667, 0.333333, 0.375, 0.416667, 0.458333, 0.5, 0.541667, 0.583333, 0.625, 0.666667, 0.708333, 0.75, 0.791667, 0.833333, 0.875, 0.916667, 0.958333, 1, 1.04167, 1.08333, 1.125, 1.16667, 1.20833, 1.25, 1.29167, 1.33333, 1.375, 1.41667, 1.45833, 1.5, 1.54167, 1.58333, 1.625, 1.66667, 1.70833, 1.75, 1.79167, 1.83333, 1.875, 1.91667, 1.95833, 2, 2.04167, 2.08333, 2.125, 2.16667, 2.20833, 2.25, 2.29167, 2.33333, 2.375, 2.41667, 2.45833, 2.5, 2.54167, 2.58333, 2.625, 2.66667, 2.70833, 2.75, 2.79167, 2.83333, 2.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
+}
+
+[sub_resource type="Animation" id="Animation_lxd1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_d5ykx"]
+resource_name = "Walking"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sc8c2"]
+_data = {
+&"IdleLook": SubResource("Animation_33p1h"),
+&"RESET": SubResource("Animation_lxd1a"),
+&"Walking": SubResource("Animation_d5ykx")
+}
+
+[node name="Casino" type="Node2D"]
+
+[node name="Casino Props" type="Node2D" parent="."]
+position = Vector2(2453, -20)
+
+[node name="Casino Music" type="AudioStreamPlayer2D" parent="Casino Props"]
+position = Vector2(-2363, 71)
+stream = ExtResource("1_01vfd")
+volume_db = -10.895
+autoplay = true
+parameters/looping = true
+
+[node name="TableBigChipsBlueLose" type="Sprite2D" parent="Casino Props"]
+position = Vector2(0, -7.00003)
+texture = ExtResource("2_1yep1")
+
+[node name="TableBowling" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-532, 2.99997)
+texture = ExtResource("3_tedpa")
+
+[node name="TableParappa" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1115, 15)
+texture = ExtResource("4_j6btg")
+
+[node name="TableVacant" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-2234, 14)
+texture = ExtResource("5_bjm4i")
+
+[node name="TableStandard" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1686, 13)
+texture = ExtResource("6_bo60h")
+
+[node name="Trafeus-feelin" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-631, -110)
+texture = ExtResource("7_m1473")
+script = ExtResource("8_mm77s")
+
+[node name="Miguel-feelin" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-458, -77)
+rotation = 0.0879528
+texture = ExtResource("9_mcf8t")
+
+[node name="Basketball Walker" type="Node2D" parent="."]
+position = Vector2(169, -68)
+
+[node name="Basketball" type="Sprite2D" parent="Basketball Walker"]
+position = Vector2(-1, 0)
+scale = Vector2(0.642388, 0.642389)
+texture = ExtResource("10_bhste")
+hframes = 5
+vframes = 16
+script = ExtResource("11_d53f2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Basketball Walker/Basketball"]
+libraries = {
+&"": SubResource("AnimationLibrary_sc8c2")
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(169, -68)
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(-67, -443)
+color = Color(0.105882, 0.0941176, 0.0627451, 1)
+polygon = PackedVector2Array(-74, 617, 2677, 620, 2677, 789, -71, 790)
+script = ExtResource("12_ylwr5")
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(-67, -547)
+color = Color(0.00392157, 0.196078, 0.129412, 1)
+polygon = PackedVector2Array(-105, 656, 2718, 667, 2720, 789, -105, 790)
+script = ExtResource("12_ylwr5")

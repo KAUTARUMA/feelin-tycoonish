@@ -13,7 +13,7 @@ func _ready():
 		$AnimationPlayer.play ("IdleLook")
 		
 		await get_tree().create_timer(3.0).timeout
-		flip_h = 1
+		flip_h = true
 		
 		# creates a tween
 		var tween = create_tween()
@@ -31,7 +31,7 @@ func _ready():
 		$AnimationPlayer.play ("IdleLook")
 		
 		await get_tree().create_timer(3.0).timeout
-		flip_h = 0
+		flip_h = false
 		
 		# the tween instance has become stale, we must make a new one
 		# stale = its gross and moldy, dont eat it. ew.

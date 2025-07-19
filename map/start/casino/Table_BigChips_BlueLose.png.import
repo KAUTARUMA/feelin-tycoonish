@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5de26mevsj2s"
-path="res://.godot/imported/Table_Vacant.png-425447bcd0e43f3bcb4322c4b76591c3.ctex"
+uid="uid://btsr615be1k0w"
+path="res://.godot/imported/Table_BigChips_BlueLose.png-df5597540ddb23d09663ac06a504ea07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basketball/Table_Vacant.png"
-dest_files=["res://.godot/imported/Table_Vacant.png-425447bcd0e43f3bcb4322c4b76591c3.ctex"]
+source_file="res://map/start/casino/Table_BigChips_BlueLose.png"
+dest_files=["res://.godot/imported/Table_BigChips_BlueLose.png-df5597540ddb23d09663ac06a504ea07.ctex"]
 
 [params]
 

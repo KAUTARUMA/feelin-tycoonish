@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co2d6btwefehx"
-path="res://.godot/imported/Table_Parappa.png-bf2e96d586bd1b3070b356f33a970d92.ctex"
+uid="uid://bntafna06mjgd"
+path="res://.godot/imported/Miguel-Feelin.svg-e1559f6b58171ff4bcb3c462539b8d8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basketball/Table_Parappa.png"
-dest_files=["res://.godot/imported/Table_Parappa.png-bf2e96d586bd1b3070b356f33a970d92.ctex"]
+source_file="res://map/start/casino/cameos/Miguel-Feelin.svg"
+dest_files=["res://.godot/imported/Miguel-Feelin.svg-e1559f6b58171ff4bcb3c462539b8d8a.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
