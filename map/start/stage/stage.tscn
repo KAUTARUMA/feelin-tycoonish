@@ -1,0 +1,249 @@
+[gd_scene load_steps=33 format=3 uid="uid://yv2iflmbo7bh"]
+
+[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_6idpr"]
+[ext_resource type="Script" uid="uid://bpr5wkk3pxol0" path="res://map/buyables/music_guy/music_guy.gd" id="2_e87hw"]
+[ext_resource type="AudioStream" uid="uid://dq0p7ve5r2253" path="res://map/buyables/music_guy/music/Ballers.ogg" id="3_6hhtb"]
+[ext_resource type="AudioStream" uid="uid://iw7usf0kic5k" path="res://map/buyables/music_guy/music/Eggs.ogg" id="4_3tlxl"]
+[ext_resource type="AudioStream" uid="uid://crhvgvna8qj6c" path="res://map/buyables/music_guy/music/Hit It.ogg" id="5_ci30o"]
+[ext_resource type="AudioStream" uid="uid://d4dwyuvphxtk1" path="res://map/buyables/music_guy/music/Video Game 1.ogg" id="6_edekb"]
+[ext_resource type="AudioStream" uid="uid://bvlw584l24koo" path="res://map/buyables/music_guy/music/Widge.ogg" id="7_j23b8"]
+[ext_resource type="Texture2D" uid="uid://bq76tf4yk1fii" path="res://map/buyables/music_guy/1.svg" id="8_ndkjt"]
+[ext_resource type="Texture2D" uid="uid://dy63c55ap7v1l" path="res://map/buyables/music_guy/2.svg" id="9_0yukk"]
+[ext_resource type="Texture2D" uid="uid://bpk2j37cdaqhp" path="res://map/start/shopkeeper/1.svg" id="10_lsgs6"]
+[ext_resource type="Script" uid="uid://blb7iwv8ouwnx" path="res://map/start/shopkeeper/shop_keeper.gd" id="11_v81er"]
+[ext_resource type="Texture2D" uid="uid://c3fmf56yeueax" path="res://map/start/shopkeeper/bop/1.svg" id="12_4pu0v"]
+[ext_resource type="Texture2D" uid="uid://c867gs71ltv5m" path="res://map/start/shopkeeper/bop/2.svg" id="13_hoqfi"]
+[ext_resource type="Texture2D" uid="uid://di76dijjuboka" path="res://map/start/shopkeeper/bop/3.svg" id="14_hsj76"]
+[ext_resource type="Texture2D" uid="uid://bb1vimvrtgr3" path="res://map/start/shopkeeper/bop/4.svg" id="15_mlhj4"]
+[ext_resource type="Texture2D" uid="uid://ctg3xgf1vqr1h" path="res://map/start/shopkeeper/bop/5.svg" id="16_yo3vx"]
+[ext_resource type="Texture2D" uid="uid://do0scn5xou1oj" path="res://map/start/shopkeeper/bop/6.svg" id="17_gb05t"]
+[ext_resource type="Texture2D" uid="uid://ds5puardwgvob" path="res://map/start/shopkeeper/2.svg" id="18_7uetd"]
+[ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="19_7421g"]
+[ext_resource type="AudioStream" uid="uid://qost6xonh85d" path="res://map/start/shopkeeper/ouiyer.wav" id="20_nuj2w"]
+[ext_resource type="Texture2D" uid="uid://6sgl22d633l7" path="res://map/start/stage/speakerback.svg" id="21_6hhtb"]
+[ext_resource type="Script" uid="uid://wrclxbntn1kn" path="res://map/start/stage/speaker.gd" id="21_ci30o"]
+[ext_resource type="Texture2D" uid="uid://t3o5ru6xsmxj" path="res://map/start/stage/speakerbig.svg" id="22_3tlxl"]
+[ext_resource type="Texture2D" uid="uid://cd1txxktguvkj" path="res://map/start/stage/speakertiny.svg" id="23_3tlxl"]
+
+[sub_resource type="Animation" id="Animation_cegan"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_ndkjt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_074og"]
+resource_name = "dance"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_ndkjt"), ExtResource("9_0yukk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_82xsv"]
+_data = {
+&"RESET": SubResource("Animation_cegan"),
+&"dance": SubResource("Animation_074og")
+}
+
+[sub_resource type="Animation" id="Animation_xuqvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_lsgs6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jq2sk"]
+resource_name = "bop"
+length = 0.16667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_4pu0v"), ExtResource("13_hoqfi"), ExtResource("14_hsj76"), ExtResource("15_mlhj4"), ExtResource("16_yo3vx"), ExtResource("17_gb05t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-17.035, 9.4), Vector2(-19.98, 13.205), Vector2(-15, 6.27), Vector2(-9.535, 3.825), Vector2(-3.305, 1.965)]
+}
+
+[sub_resource type="Animation" id="Animation_a6jrf"]
+resource_name = "idle"
+length = 0.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("10_lsgs6"), ExtResource("18_7uetd")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qsp4k"]
+_data = {
+&"RESET": SubResource("Animation_xuqvo"),
+&"bop": SubResource("Animation_jq2sk"),
+&"idle": SubResource("Animation_a6jrf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oawyc"]
+size = Vector2(106, 132)
+
+[node name="Stage" type="Node2D"]
+
+[node name="MusicButton" parent="." instance=ExtResource("1_6idpr")]
+position = Vector2(826, 101)
+buyable_id = "music_man"
+buyable_name = "Music"
+price = 20
+
+[node name="MusicBuyable" type="Node2D" parent="."]
+position = Vector2(830, 79)
+script = ExtResource("2_e87hw")
+songs = Array[AudioStream]([ExtResource("3_6hhtb"), ExtResource("4_3tlxl"), ExtResource("5_ci30o"), ExtResource("6_edekb"), ExtResource("7_j23b8")])
+id = "music_man"
+metadata/_custom_type_script = "uid://de7j141xed3p4"
+
+[node name="MusicGuy" type="Sprite2D" parent="MusicBuyable"]
+position = Vector2(-178, 352)
+scale = Vector2(0.500001, 0.504167)
+texture = ExtResource("8_ndkjt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MusicBuyable/MusicGuy"]
+libraries = {
+&"": SubResource("AnimationLibrary_82xsv")
+}
+autoplay = "dance"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MusicBuyable/MusicGuy"]
+position = Vector2(-24, 15.8678)
+scale = Vector2(2, 1.98347)
+max_distance = 3500.0
+attenuation = 0.0457528
+
+[node name="Speaker" type="Node2D" parent="MusicBuyable"]
+position = Vector2(-56, 412)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("21_ci30o")
+
+[node name="Back" type="Sprite2D" parent="MusicBuyable/Speaker"]
+position = Vector2(0, -138)
+texture = ExtResource("21_6hhtb")
+
+[node name="Big" type="Sprite2D" parent="MusicBuyable/Speaker"]
+position = Vector2(1, -175)
+texture = ExtResource("22_3tlxl")
+
+[node name="Small" type="Sprite2D" parent="MusicBuyable/Speaker"]
+position = Vector2(1, -55)
+texture = ExtResource("23_3tlxl")
+
+[node name="ShopKeeper" type="Sprite2D" parent="."]
+position = Vector2(405, 412)
+texture = ExtResource("10_lsgs6")
+script = ExtResource("11_v81er")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopKeeper"]
+libraries = {
+&"": SubResource("AnimationLibrary_qsp4k")
+}
+autoplay = "idle"
+
+[node name="TalkingSpeechBubble" parent="ShopKeeper" instance=ExtResource("19_7421g")]
+offset_left = 20.0
+offset_top = -156.0
+offset_right = 200.0
+offset_bottom = -80.0
+sound = ExtResource("20_nuj2w")
+text = "i am ouiyer"
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="ShopKeeper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopKeeper/TalkHitbox"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_oawyc")
+
+[connection signal="body_entered" from="ShopKeeper/TalkHitbox" to="ShopKeeper" method="_on_talk_hitbox_body_entered"]
