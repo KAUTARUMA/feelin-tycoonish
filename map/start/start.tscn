@@ -1,7 +1,10 @@
-[gd_scene load_steps=56 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=59 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
+[ext_resource type="Texture2D" uid="uid://csfkused7fqh3" path="res://map/buyables/Gurt/gurtgreen.png" id="2_0q1kr"]
+[ext_resource type="Script" uid="uid://v033sxfivegl" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
 [ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
+[ext_resource type="AudioStream" uid="uid://b5vtqqalnrl20" path="res://map/buyables/Gurt/evil gurt laugh.ogg" id="3_gqkmp"]
 [ext_resource type="Texture2D" uid="uid://c30tbxn6synlx" path="res://map/buyables/walker/stage.svg" id="3_p5ndp"]
 [ext_resource type="Texture2D" uid="uid://c4dnhesc0ffom" path="res://map/buyables/walker/pot_walk_spritesheet.png" id="4_repp3"]
 [ext_resource type="Script" uid="uid://bpr5wkk3pxol0" path="res://map/buyables/music_guy/music_guy.gd" id="5_y4am4"]
@@ -297,6 +300,26 @@ buyable_id = "walker0"
 buyable_name = "Potasium Walker"
 price = 0
 
+[node name="GurtButton" parent="." instance=ExtResource("1_2eqjb")]
+position = Vector2(1715, 102)
+buyable_id = "gurt"
+buyable_name = "Gurt"
+price = 100
+
+[node name="GurtBuyable" type="Node2D" parent="."]
+position = Vector2(1713, 423.545)
+scale = Vector2(0.532259, 0.544059)
+script = ExtResource("2_ap4hh")
+id = "gurt"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GurtBuyable"]
+stream = ExtResource("3_gqkmp")
+
+[node name="Gurt" type="Node2D" parent="GurtBuyable"]
+
+[node name="Gurt" type="Sprite2D" parent="GurtBuyable/Gurt"]
+texture = ExtResource("2_0q1kr")
+
 [node name="WalkerUpgradeButton" parent="." instance=ExtResource("1_2eqjb")]
 position = Vector2(1022, 128)
 buyable_id = "walker0_upgrade0"
@@ -326,7 +349,7 @@ sprite_frames = SubResource("SpriteFrames_h2yge")
 animation = &"idle"
 
 [node name="MusicButton" parent="." instance=ExtResource("1_2eqjb")]
-position = Vector2(2537, 98)
+position = Vector2(2533, 120)
 buyable_id = "music_man"
 buyable_name = "Music"
 price = 20
