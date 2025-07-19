@@ -29,8 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
 [ext_resource type="Texture2D" uid="uid://rew1fnyy15mf" path="res://map/start/casino hell sign.png" id="26_7cpad"]
-[ext_resource type="Texture2D" uid="uid://bta7xcejuxnx0" path="res://FNAF_WORLD.EXE_0x6D1D53B3.png" id="26_yg3ev"]
-[ext_resource type="AudioStream" uid="uid://xw23mswgbaal" path="res://zachSound.ogg" id="27_d5ykx"]
+[ext_resource type="Texture2D" uid="uid://bta7xcejuxnx0" path="res://map/start/FNAF_WORLD.EXE_0x6D1D53B3.png" id="26_yg3ev"]
+[ext_resource type="AudioStream" uid="uid://xw23mswgbaal" path="res://map/start/zachSound.ogg" id="27_d5ykx"]
 [ext_resource type="Script" path="res://map/start/zach_fazbear.gd" id="27_lxd1a"]
 [ext_resource type="PackedScene" uid="uid://cm0nnp5vaiqge" path="res://map/start/casino/casino.tscn" id="28_33p1h"]
 
@@ -362,12 +362,12 @@ position = Vector2(-3231, 464)
 [node name="SockZone" parent="." instance=ExtResource("19_5maui")]
 position = Vector2(2705, -4)
 
-[node name="zachFazbear" type="Sprite2D" parent="."]
+[node name="ZachFazbear" type="Sprite2D" parent="."]
 position = Vector2(1432, 401)
 texture = ExtResource("26_yg3ev")
 script = ExtResource("27_lxd1a")
 
-[node name="TalkingSpeechBubble" parent="zachFazbear" instance=ExtResource("17_oawyc")]
+[node name="TalkingSpeechBubble" parent="ZachFazbear" instance=ExtResource("17_oawyc")]
 offset_left = 22.0
 offset_top = -157.0
 offset_right = 202.0
@@ -376,12 +376,12 @@ sound = ExtResource("27_d5ykx")
 text = "hey guys its me zach fazbear"
 metadata/_edit_use_anchors_ = true
 
-[node name="TalkHitbox" type="Area2D" parent="zachFazbear"]
+[node name="TalkHitbox" type="Area2D" parent="ZachFazbear"]
 position = Vector2(0, 31)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="zachFazbear/TalkHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZachFazbear/TalkHitbox"]
 position = Vector2(2.5, -32)
 shape = SubResource("RectangleShape2D_lxd1a")
 
 [connection signal="body_entered" from="ShopKeeper/TalkHitbox" to="ShopKeeper" method="_on_talk_hitbox_body_entered"]
-[connection signal="body_entered" from="zachFazbear/TalkHitbox" to="zachFazbear" method="_on_talk_hitbox_body_entered"]
+[connection signal="body_entered" from="ZachFazbear/TalkHitbox" to="ZachFazbear" method="_on_talk_hitbox_body_entered"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bta7xcejuxnx0"
-path="res://.godot/imported/FNAF_WORLD.EXE_0x6D1D53B3.png-bb4cded7d5631afcadb765b9d580e9f4.ctex"
+path="res://.godot/imported/FNAF_WORLD.EXE_0x6D1D53B3.png-66e417d482da2063a44532da62aae722.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FNAF_WORLD.EXE_0x6D1D53B3.png"
-dest_files=["res://.godot/imported/FNAF_WORLD.EXE_0x6D1D53B3.png-bb4cded7d5631afcadb765b9d580e9f4.ctex"]
+source_file="res://map/start/FNAF_WORLD.EXE_0x6D1D53B3.png"
+dest_files=["res://.godot/imported/FNAF_WORLD.EXE_0x6D1D53B3.png-66e417d482da2063a44532da62aae722.ctex"]
 
 [params]
 
