@@ -16,6 +16,9 @@ func _ready() -> void:
 	
 	for background in backgrounds:
 		background.music.volume_db = AUDIO_MUTE
+		
+		if background.name != "Start":
+			background.self_modulate.a = 0
 	
 	Game.backgrounds = backgrounds
 	

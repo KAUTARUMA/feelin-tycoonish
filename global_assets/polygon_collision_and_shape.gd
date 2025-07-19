@@ -5,5 +5,5 @@ var collision: CollisionPolygon2D = CollisionPolygon2D.new()
 
 func _ready() -> void:
 	collision.polygon = polygon
-	collision.position = position
+	collision.transform = transform
 	add_sibling.call_deferred(collision)

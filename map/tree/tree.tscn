@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvcub5rj0pt"]
+
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="1_0mvlg"]
+[ext_resource type="Texture2D" uid="uid://nja1sq2mfvse" path="res://map/tree/tree.png" id="1_h2qj4"]
+
+[node name="Tree" type="Node2D"]
+scale = Vector2(2.64, 2.88)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(14, -91)
+scale = Vector2(1, 1)
+texture = ExtResource("1_h2qj4")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="PolygonCollisionAndShape" type="Polygon2D" parent="Ground"]
+position = Vector2(-156, -291)
+scale = Vector2(0.120001, 0.56)
+color = Color(0.17143, 0.052549, 0.123938, 1)
+polygon = PackedVector2Array(-54, 516, 2735, 516, 2735, 790, -54, 790)
+script = ExtResource("1_0mvlg")

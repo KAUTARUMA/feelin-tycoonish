@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdukqnlgcdg3b"]
+[gd_scene load_steps=12 format=3 uid="uid://bdukqnlgcdg3b"]
 
 [ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
 [ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
 [ext_resource type="PackedScene" uid="uid://cmg6jlrsx2q7u" path="res://map/hell/hell.tscn" id="2_4hjbm"]
 [ext_resource type="Script" uid="uid://b7vwm3thj0fwj" path="res://map/death_barrier.gd" id="3_4hjbm"]
+[ext_resource type="PackedScene" uid="uid://pvcub5rj0pt" path="res://map/tree/tree.tscn" id="4_7lyie"]
 [ext_resource type="Script" uid="uid://ckss0eshbbfyq" path="res://map/background_area.gd" id="6_7lyie"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a0dt8"]
@@ -17,6 +18,9 @@ size = Vector2(2870, 2996)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lyie"]
 size = Vector2(17173, 4401)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxmgb"]
+size = Vector2(2804, 1292)
+
 [node name="Map" type="Node2D"]
 
 [node name="Backgrounds" parent="." instance=ExtResource("1_kffv2")]
@@ -25,6 +29,9 @@ size = Vector2(17173, 4401)
 
 [node name="Hell" parent="." instance=ExtResource("2_4hjbm")]
 position = Vector2(3112, 5965)
+
+[node name="Tree" parent="." instance=ExtResource("4_7lyie")]
+position = Vector2(8360, 241)
 
 [node name="DeathBarrier" type="Area2D" parent="."]
 position = Vector2(2076, 8114)
@@ -64,7 +71,16 @@ area_name = "Hell"
 position = Vector2(7688.5, 828.5)
 shape = SubResource("RectangleShape2D_7lyie")
 
+[node name="TreeArea" type="Area2D" parent="Areas"]
+position = Vector2(8368, 193)
+script = ExtResource("6_7lyie")
+area_name = "Tree"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/TreeArea"]
+shape = SubResource("RectangleShape2D_kxmgb")
+
 [connection signal="body_shape_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Areas/StartArea" to="Areas/StartArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/CasinoArea" to="Areas/CasinoArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/HellArea" to="Areas/HellArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Areas/TreeArea" to="Areas/TreeArea" method="_on_body_entered"]
