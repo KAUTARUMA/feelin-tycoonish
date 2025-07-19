@@ -1,58 +1,248 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=54 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Texture2D" uid="uid://csfkused7fqh3" path="res://map/buyables/Gurt/gurtgreen.png" id="2_0q1kr"]
-[ext_resource type="Script" uid="uid://v033sxfivegl" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
+[ext_resource type="Script" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
+[ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
 [ext_resource type="AudioStream" uid="uid://b5vtqqalnrl20" path="res://map/buyables/Gurt/evil gurt laugh.ogg" id="3_gqkmp"]
-[ext_resource type="PackedScene" uid="uid://bj7e4cpuy2wsi" path="res://map/buyables/walker/walker.tscn" id="6_gjcup"]
-[ext_resource type="PackedScene" uid="uid://yv2iflmbo7bh" path="res://map/start/stage/stage.tscn" id="8_jd16q"]
+[ext_resource type="Texture2D" uid="uid://c30tbxn6synlx" path="res://map/buyables/walker/stage.svg" id="3_p5ndp"]
+[ext_resource type="Texture2D" uid="uid://c4dnhesc0ffom" path="res://map/buyables/walker/pot_walk_spritesheet.png" id="4_repp3"]
+[ext_resource type="Script" uid="uid://bpr5wkk3pxol0" path="res://map/buyables/music_guy/music_guy.gd" id="5_y4am4"]
+[ext_resource type="Texture2D" uid="uid://bq76tf4yk1fii" path="res://map/buyables/music_guy/1.svg" id="6_7ib7q"]
+[ext_resource type="AudioStream" uid="uid://dq0p7ve5r2253" path="res://map/buyables/music_guy/music/Ballers.ogg" id="6_vdqd0"]
+[ext_resource type="AudioStream" uid="uid://iw7usf0kic5k" path="res://map/buyables/music_guy/music/Eggs.ogg" id="7_w1x5h"]
+[ext_resource type="Texture2D" uid="uid://dy63c55ap7v1l" path="res://map/buyables/music_guy/2.svg" id="7_xgnfn"]
+[ext_resource type="Texture2D" uid="uid://bpk2j37cdaqhp" path="res://map/start/shopkeeper/1.svg" id="8_4cj1m"]
+[ext_resource type="AudioStream" uid="uid://crhvgvna8qj6c" path="res://map/buyables/music_guy/music/Hit It.ogg" id="8_5li7y"]
+[ext_resource type="AudioStream" uid="uid://d4dwyuvphxtk1" path="res://map/buyables/music_guy/music/Video Game 1.ogg" id="9_7cpad"]
+[ext_resource type="Script" uid="uid://blb7iwv8ouwnx" path="res://map/start/shopkeeper/shop_keeper.gd" id="9_xwm7u"]
+[ext_resource type="Texture2D" uid="uid://c3fmf56yeueax" path="res://map/start/shopkeeper/bop/1.svg" id="10_8h4ui"]
+[ext_resource type="AudioStream" uid="uid://bvlw584l24koo" path="res://map/buyables/music_guy/music/Widge.ogg" id="10_yg3ev"]
+[ext_resource type="Texture2D" uid="uid://c867gs71ltv5m" path="res://map/start/shopkeeper/bop/2.svg" id="11_bhmry"]
+[ext_resource type="Texture2D" uid="uid://di76dijjuboka" path="res://map/start/shopkeeper/bop/3.svg" id="12_vsgy6"]
+[ext_resource type="Texture2D" uid="uid://bb1vimvrtgr3" path="res://map/start/shopkeeper/bop/4.svg" id="13_dboqe"]
+[ext_resource type="Texture2D" uid="uid://ctg3xgf1vqr1h" path="res://map/start/shopkeeper/bop/5.svg" id="14_vokrm"]
+[ext_resource type="Texture2D" uid="uid://do0scn5xou1oj" path="res://map/start/shopkeeper/bop/6.svg" id="15_0pq1w"]
+[ext_resource type="Texture2D" uid="uid://ds5puardwgvob" path="res://map/start/shopkeeper/2.svg" id="16_jihfo"]
 [ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="17_oawyc"]
+[ext_resource type="AudioStream" uid="uid://qost6xonh85d" path="res://map/start/shopkeeper/ouiyer.wav" id="18_p5ndp"]
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
 [ext_resource type="Texture2D" uid="uid://rew1fnyy15mf" path="res://map/start/casino hell sign.png" id="26_7cpad"]
 [ext_resource type="Texture2D" uid="uid://bta7xcejuxnx0" path="res://map/start/FNAF_WORLD.EXE_0x6D1D53B3.png" id="26_yg3ev"]
 [ext_resource type="AudioStream" uid="uid://xw23mswgbaal" path="res://map/start/zachSound.ogg" id="27_d5ykx"]
-[ext_resource type="Script" uid="uid://j2qhohws5lnv" path="res://map/start/zach_fazbear.gd" id="27_lxd1a"]
+[ext_resource type="Script" path="res://map/start/zach_fazbear.gd" id="27_lxd1a"]
 [ext_resource type="PackedScene" uid="uid://cm0nnp5vaiqge" path="res://map/start/casino/casino.tscn" id="28_33p1h"]
+[ext_resource type="Texture2D" uid="uid://c1a0xxbo4ql8t" path="res://map/start/cpepsu.png" id="34_5maui"]
+[ext_resource type="AudioStream" uid="uid://cqxxrxili38nh" path="res://map/start/cpepsutalk.ogg" id="35_0q1kr"]
+[ext_resource type="Texture2D" uid="uid://bti8umte10ym0" path="res://map/start/evil sign.png" id="36_ap4hh"]
+[ext_resource type="Script" path="res://map/start/cpepsu.gd" id="37_0q1kr"]
+[ext_resource type="Script" path="res://map/start/penisbutton.gd" id="37_gqkmp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("4_repp3")
+region = Rect2(0, 0, 225, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("4_repp3")
+region = Rect2(225, 0, 225, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("4_repp3")
+region = Rect2(450, 0, 225, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("4_repp3")
+region = Rect2(675, 0, 225, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("4_repp3")
+region = Rect2(900, 0, 225, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2yge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_cegan"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_7ib7q")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_074og"]
+resource_name = "dance"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_7ib7q"), ExtResource("7_xgnfn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_82xsv"]
+_data = {
+&"RESET": SubResource("Animation_cegan"),
+&"dance": SubResource("Animation_074og")
+}
+
+[sub_resource type="Animation" id="Animation_xuqvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_4cj1m")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jq2sk"]
+resource_name = "bop"
+length = 0.16667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_8h4ui"), ExtResource("11_bhmry"), ExtResource("12_vsgy6"), ExtResource("13_dboqe"), ExtResource("14_vokrm"), ExtResource("15_0pq1w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-17.035, 9.4), Vector2(-19.98, 13.205), Vector2(-15, 6.27), Vector2(-9.535, 3.825), Vector2(-3.305, 1.965)]
+}
+
+[sub_resource type="Animation" id="Animation_a6jrf"]
+resource_name = "idle"
+length = 0.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_4cj1m"), ExtResource("16_jihfo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qsp4k"]
+_data = {
+&"RESET": SubResource("Animation_xuqvo"),
+&"bop": SubResource("Animation_jq2sk"),
+&"idle": SubResource("Animation_a6jrf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oawyc"]
+size = Vector2(106, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxd1a"]
-size = Vector2(69, 220)
+size = Vector2(186, 193)
 
 [node name="Start" type="Node2D"]
-
-[node name="Ground" type="StaticBody2D" parent="."]
-
-[node name="PolygonCollisionAndShape" type="Polygon2D" parent="Ground"]
-color = Color(0.74902, 0.392157, 0.0588235, 1)
-polygon = PackedVector2Array(-265, 516, 32, 509, 357, 320, 588, 514, 2735, 506, 2734, 769, -260, 790)
-script = ExtResource("24_5li7y")
 
 [node name="WalkerButton" parent="." instance=ExtResource("1_2eqjb")]
 position = Vector2(1022, 128)
 buyable_id = "walker0"
 buyable_name = "Potasium Walker"
 price = 0
-
-[node name="WalkerButton2" parent="." instance=ExtResource("1_2eqjb")]
-position = Vector2(1022, -204)
-buyable_id = "walker1"
-buyable_name = "Potasium Walker"
-price = 120
-requires = Array[String](["walker0_upgrade1"])
-
-[node name="WalkerUpgradeButton" parent="." instance=ExtResource("1_2eqjb")]
-position = Vector2(1022, 128)
-buyable_id = "walker0_upgrade0"
-buyable_name = "Faster Production Speed"
-price = 4
-requires = Array[String](["walker0"])
-
-[node name="WalkerUpgradeButton4" parent="." instance=ExtResource("1_2eqjb")]
-position = Vector2(1016, -210)
-buyable_id = "walker1_upgrade1"
-buyable_name = "More Potasi-Value"
-price = 240
-requires = Array[String](["walker1", "walker1_upgrade0"])
 
 [node name="GurtButton" parent="." instance=ExtResource("1_2eqjb")]
 position = Vector2(1715, 102)
@@ -74,12 +264,12 @@ stream = ExtResource("3_gqkmp")
 [node name="Gurt" type="Sprite2D" parent="GurtBuyable/Gurt"]
 texture = ExtResource("2_0q1kr")
 
-[node name="WalkerUpgradeButton3" parent="." instance=ExtResource("1_2eqjb")]
-position = Vector2(1022, -203)
-buyable_id = "walker1_upgrade0"
+[node name="WalkerUpgradeButton" parent="." instance=ExtResource("1_2eqjb")]
+position = Vector2(1022, 128)
+buyable_id = "walker0_upgrade0"
 buyable_name = "Faster Production Speed"
-price = 160
-requires = Array[String](["walker1"])
+price = 4
+requires = Array[String](["walker0"])
 
 [node name="WalkerUpgradeButton2" parent="." instance=ExtResource("1_2eqjb")]
 position = Vector2(1022, 128)
@@ -88,21 +278,85 @@ buyable_name = "More Potasi-Value"
 price = 16
 requires = Array[String](["walker0", "walker0_upgrade0"])
 
-[node name="Walker" parent="." instance=ExtResource("6_gjcup")]
+[node name="Walker" type="Node2D" parent="."]
 position = Vector2(558, 120)
+script = ExtResource("2_oawyc")
+id = "walker0"
 
-[node name="Walker2" parent="." instance=ExtResource("6_gjcup")]
-position = Vector2(558, -161)
-id = "walker1"
+[node name="Stage" type="Sprite2D" parent="Walker"]
+texture = ExtResource("3_p5ndp")
 
-[node name="Stage" parent="." instance=ExtResource("8_jd16q")]
-position = Vector2(1779, 19)
+[node name="Potasium" type="AnimatedSprite2D" parent="Walker"]
+position = Vector2(-190, -30)
+scale = Vector2(0.744444, 0.744444)
+sprite_frames = SubResource("SpriteFrames_h2yge")
+animation = &"idle"
+
+[node name="Cpepsu" type="Node2D" parent="Walker"]
+position = Vector2(-8008, 227)
+
+[node name="MusicButton" parent="." instance=ExtResource("1_2eqjb")]
+position = Vector2(2533, 120)
+buyable_id = "music_man"
+buyable_name = "Music"
+price = 20
+
+[node name="MusicBuyable" type="Node2D" parent="."]
+position = Vector2(2537, 98)
+script = ExtResource("5_y4am4")
+songs = Array[AudioStream]([ExtResource("6_vdqd0"), ExtResource("7_w1x5h"), ExtResource("8_5li7y"), ExtResource("9_7cpad"), ExtResource("10_yg3ev")])
+id = "music_man"
+metadata/_custom_type_script = "uid://de7j141xed3p4"
+
+[node name="MusicGuy" type="Sprite2D" parent="MusicBuyable"]
+position = Vector2(-178, 352)
+scale = Vector2(0.500001, 0.504167)
+texture = ExtResource("6_7ib7q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MusicBuyable/MusicGuy"]
+libraries = {
+&"": SubResource("AnimationLibrary_82xsv")
+}
+autoplay = "dance"
+
+[node name="ShopKeeper" type="Sprite2D" parent="."]
+position = Vector2(2112, 431)
+texture = ExtResource("8_4cj1m")
+script = ExtResource("9_xwm7u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopKeeper"]
+libraries = {
+&"": SubResource("AnimationLibrary_qsp4k")
+}
+autoplay = "idle"
+
+[node name="TalkingSpeechBubble" parent="ShopKeeper" instance=ExtResource("17_oawyc")]
+offset_left = 20.0
+offset_top = -156.0
+offset_right = 200.0
+offset_bottom = -80.0
+sound = ExtResource("18_p5ndp")
+text = "i am ouiyer"
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="ShopKeeper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopKeeper/TalkHitbox"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_oawyc")
 
 [node name="CasinoHellSign" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-311, 308)
 scale = Vector2(0.613636, 0.613636)
 texture = ExtResource("26_7cpad")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="PolygonCollisionAndShape" type="Polygon2D" parent="Ground"]
+color = Color(0.74902, 0.392157, 0.0588235, 1)
+polygon = PackedVector2Array(-265, 516, 32, 509, 357, 320, 588, 514, 2735, 506, 2734, 769, -260, 790)
+script = ExtResource("24_5li7y")
 
 [node name="Casino" parent="." instance=ExtResource("28_33p1h")]
 position = Vector2(-3231, 464)
@@ -131,4 +385,118 @@ position = Vector2(0, 31)
 position = Vector2(2.5, -32)
 shape = SubResource("RectangleShape2D_lxd1a")
 
+[node name="EvilSign" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-3478, 389)
+scale = Vector2(0.548544, 0.548544)
+texture = ExtResource("36_ap4hh")
+
+[node name="BuyableButton" parent="." instance=ExtResource("1_2eqjb")]
+position = Vector2(-7272, 124)
+script = ExtResource("37_gqkmp")
+
+[node name="TextName" parent="BuyableButton" index="1"]
+text = "hurt yourself and others button"
+
+[node name="Price" parent="BuyableButton/TextName" index="1"]
+text = "1$"
+
+[node name="TalkingSpeechBubble" parent="BuyableButton" instance=ExtResource("17_oawyc")]
+offset_left = 71.0
+offset_top = -64.0
+offset_right = 251.0
+offset_bottom = 11.0
+text = "please do not do that"
+
+[node name="123" type="StaticBody2D" parent="."]
+
+[node name="PolygonCollisionAndShape" type="Polygon2D" parent="123"]
+position = Vector2(-6611.55, 488.359)
+scale = Vector2(0.368222, 0.289096)
+color = Color(0.0303592, 0.165495, 0.0999039, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -257, 2222.94, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="123"]
+position = Vector2(-3785, 558)
+scale = Vector2(0.0508515, 0.204319)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="123"]
+position = Vector2(-3472, 612)
+scale = Vector2(0.0394179, 0.13516)
+color = Color(0.382993, 0.188264, 0.0587657, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape4" type="Polygon2D" parent="123"]
+position = Vector2(-5293, 621)
+scale = Vector2(0.143965, 0.222272)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape5" type="Polygon2D" parent="123"]
+position = Vector2(-4685, 581)
+scale = Vector2(0.0465762, 0.170895)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape6" type="Polygon2D" parent="123"]
+position = Vector2(-4219, 598)
+scale = Vector2(0.0789501, 0.101022)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -568.973, 3069.36, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape7" type="Polygon2D" parent="123"]
+position = Vector2(-5739, 558)
+scale = Vector2(0.0262477, 0.0819117)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape8" type="Polygon2D" parent="123"]
+position = Vector2(-5860, 487)
+scale = Vector2(0.0147917, 0.0392611)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("24_5li7y")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="Cpepsu" type="Sprite2D" parent="."]
+position = Vector2(-6937, 338)
+texture = ExtResource("34_5maui")
+script = ExtResource("37_0q1kr")
+
+[node name="TalkingSpeechBubble" parent="Cpepsu" instance=ExtResource("17_oawyc")]
+offset_left = 22.0
+offset_top = -157.0
+offset_right = 202.0
+offset_bottom = -81.0
+sound = ExtResource("35_0q1kr")
+text = "You dont wanna buy this... Its effed up..."
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="Cpepsu"]
+position = Vector2(0, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cpepsu/TalkHitbox"]
+position = Vector2(2, -29)
+shape = SubResource("RectangleShape2D_lxd1a")
+
+[connection signal="body_entered" from="ShopKeeper/TalkHitbox" to="ShopKeeper" method="_on_talk_hitbox_body_entered"]
 [connection signal="body_entered" from="ZachFazbear/TalkHitbox" to="ZachFazbear" method="_on_talk_hitbox_body_entered"]
+[connection signal="body_entered" from="Cpepsu/TalkHitbox" to="Cpepsu" method="_on_talk_hitbox_body_entered"]
+
+[editable path="BuyableButton"]
