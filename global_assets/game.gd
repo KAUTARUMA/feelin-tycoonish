@@ -10,7 +10,9 @@ var money2:int = 0
 # every buyable thats been bought
 var buyable_bought_list:Array[String]
 
-# the name of the current background
+var backgrounds: Array[Background]
+
+# the name of the current area
 var current_area: String = ""
 
 # the player may not be set immediately, so watch out when writing your code.

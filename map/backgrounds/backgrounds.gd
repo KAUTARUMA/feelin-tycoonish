@@ -17,6 +17,8 @@ func _ready() -> void:
 	for background in backgrounds:
 		background.music.volume_db = AUDIO_MUTE
 	
+	Game.backgrounds = backgrounds
+	
 	Game.area_changed.connect(_fade_all_bgs)
 
 func _fade_all_bgs(bg_name: String):

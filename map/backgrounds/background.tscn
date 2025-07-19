@@ -50,6 +50,7 @@ stream = ExtResource("4_p7cq6")
 autoplay = true
 
 [node name="Start" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+visible = false
 script = ExtResource("2_tyq1r")
 music = NodePath("AudioStreamPlayer")
 
