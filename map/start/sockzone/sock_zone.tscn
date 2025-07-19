@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b74btp8vqqqpk" path="res://map/start/sockzone/portal.png" id="9_dglsg"]
 [ext_resource type="Script" uid="uid://clvt7ddbgp25l" path="res://map/start/sockzone/press e.gd" id="10_mduxt"]
 [ext_resource type="Texture2D" uid="uid://dtsfliorhirpg" path="res://map/start/sockzone/big fat lard.png" id="12_didc5"]
-[ext_resource type="Script" uid="uid://djwtctg4p1vdd" path="res://map/start/sockzone/stoopidfatguy.gd" id="13_x6u66"]
+[ext_resource type="Script" path="res://map/start/sockzone/stoopidfatguy.gd" id="13_x6u66"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n3xu8"]
 font_size = 24
@@ -129,10 +129,10 @@ polygon = PackedVector2Array(-54, 516, 32, 509, 311, 553, 588, 514, 2735, 506, 2
 script = ExtResource("6_cjukr")
 metadata/_custom_type_script = "uid://c8jubnsknh8nd"
 
-[node name="WalkerButton" parent="." instance=ExtResource("6_dqs1e")]
+[node name="DashButton" parent="." instance=ExtResource("6_dqs1e")]
 position = Vector2(391, 206)
 buyable_id = "dash"
-buyable_name = "celeste dash mechanic"
+buyable_name = "New Mechanic"
 price = 50
 
 [node name="Temmie flakes reminds me of jeffy" type="Area2D" parent="."]
