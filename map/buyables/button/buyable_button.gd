@@ -88,6 +88,8 @@ func _buy_buyable():
 	audio_player.play()
 	
 	# stupid code that im too tired to explain sorry
+	# not kauta this is someone else lowkey this is kind of like when you step on a goomba but its still there
+	# after youve stepped on it
 	if stay_on_buy: 
 		Game.buyable_bought_list.remove_at(Game.buyable_bought_list.find(buyable_id))
 		return
