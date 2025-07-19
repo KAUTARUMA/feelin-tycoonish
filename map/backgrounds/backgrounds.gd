@@ -2,10 +2,22 @@ extends Node2D
 
 const FADE_LENGTH = 1.0
 
+const AUDIO_MUTE = -80.0
+const AUDIO_MAX = -5.0
+
 var fade_tween: Tween
 
+var backgrounds: Array[Background]
+
 func _ready() -> void:
-	Game.bg_changed.connect(_fade_all_bgs)
+	for child in get_children():
+		if child is Background:
+			backgrounds.append(child)
+	
+	for background in backgrounds:
+		background.music.volume_db = AUDIO_MUTE
+	
+	Game.area_changed.connect(_fade_all_bgs)
 
 func _fade_all_bgs(bg_name: String):
 	if fade_tween != null:
@@ -13,19 +25,24 @@ func _fade_all_bgs(bg_name: String):
 	
 	fade_tween = create_tween()
 	
-	for child: Node2D in get_children():
-		child.visible = true
+	for background in backgrounds:
+		background.visible = true
 		
-		var target = 0.0 if child.name != bg_name else 1.0
+		var target = 0.0 if background.name != bg_name else 1.0
 		
-		fade_tween.parallel().tween_property(child, "modulate", Color(
+		fade_tween.parallel().tween_property(background, "self_modulate", Color(
 			1.0,
 			1.0,
 			1.0,
 			target
 		), FADE_LENGTH)
 		
+		if background.music != null:
+			fade_tween.parallel().tween_property(background.music, "volume_db", 
+				remap(target, 0, 1, AUDIO_MUTE, AUDIO_MAX)
+			, FADE_LENGTH)
+		
 		fade_tween.finished.connect(func():
 			if target == 0.0:
-				child.visible = false
+				background.visible = false
 		)

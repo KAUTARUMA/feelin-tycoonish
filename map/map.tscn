@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdukqnlgcdg3b"]
+[gd_scene load_steps=10 format=3 uid="uid://bdukqnlgcdg3b"]
 
 [ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
 [ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
@@ -9,7 +9,10 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a0dt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kffv2"]
-size = Vector2(6884, 2996)
+size = Vector2(6393, 2996)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jdw0"]
+size = Vector2(2870, 2996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lyie"]
 size = Vector2(17173, 4401)
@@ -30,27 +33,38 @@ script = ExtResource("3_4hjbm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBarrier"]
 shape = SubResource("WorldBoundaryShape2D_a0dt8")
 
-[node name="StartBGArea" type="Area2D" parent="."]
-script = ExtResource("6_7lyie")
-bg_name = "StartBG"
+[node name="Areas" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartBGArea"]
-position = Vector2(2544, 126)
+[node name="StartArea" type="Area2D" parent="Areas"]
+script = ExtResource("6_7lyie")
+area_name = "Start"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/StartArea"]
+position = Vector2(2789.5, 126)
 shape = SubResource("RectangleShape2D_kffv2")
 
-[node name="feelinfarmin placeholder" type="CollisionShape2D" parent="StartBGArea"]
+[node name="feelinfarmin placeholder" type="CollisionShape2D" parent="Areas/StartArea"]
 position = Vector2(16972, 4402)
 shape = SubResource("RectangleShape2D_kffv2")
 
-[node name="HellBGArea" type="Area2D" parent="."]
+[node name="CasinoArea" type="Area2D" parent="Areas"]
+script = ExtResource("6_7lyie")
+area_name = "Casino"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/CasinoArea"]
+position = Vector2(-1842, 126)
+shape = SubResource("RectangleShape2D_5jdw0")
+
+[node name="HellArea" type="Area2D" parent="Areas"]
 position = Vector2(-2764, 4588)
 script = ExtResource("6_7lyie")
-bg_name = "HellBG"
+area_name = "Hell"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HellBGArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/HellArea"]
 position = Vector2(7688.5, 828.5)
 shape = SubResource("RectangleShape2D_7lyie")
 
 [connection signal="body_shape_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_shape_entered"]
-[connection signal="body_entered" from="StartBGArea" to="StartBGArea" method="_on_body_entered"]
-[connection signal="body_entered" from="HellBGArea" to="HellBGArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Areas/StartArea" to="Areas/StartArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Areas/CasinoArea" to="Areas/CasinoArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Areas/HellArea" to="Areas/HellArea" method="_on_body_entered"]
