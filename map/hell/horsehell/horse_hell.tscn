@@ -174,7 +174,6 @@ text = "test test test test. another one for good measure: test"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Feelin Farmin\'/Feelinfarmin/TalkHitbox"]
 position = Vector2(6.12549, -2.58258)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vf7to")
 
 [node name="HonseButton" parent="." instance=ExtResource("8_5n3u1")]
