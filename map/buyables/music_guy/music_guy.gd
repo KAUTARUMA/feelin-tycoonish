@@ -2,10 +2,14 @@ extends Buyable
 
 @export var songs: Array[AudioStream] = []
 
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $MusicGuy/AudioStreamPlayer2D
-
 func _on_buy():
+	var start_background: Background
+	
+	for background in Game.backgrounds:
+		if background.name == "Start":
+			start_background = background
+	
 	while true:
-		audio_stream_player_2d.stream = songs.pick_random()
-		audio_stream_player_2d.play()
-		await audio_stream_player_2d.finished
+		start_background.music.stream = songs.pick_random()
+		start_background.music.play()
+		await start_background.music.finished
