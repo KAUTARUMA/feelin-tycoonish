@@ -1,9 +1,24 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://dhkfs57qbmi38"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://dhkfs57qbmi38"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://dk371qwdblp0q" path="res://map/backgrounds/backgrounds.gd" id="1_1koha"]
 [ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/wavy.gdshader" id="1_ix8yj"]
 [ext_resource type="Texture2D" uid="uid://bkilb0w4yo2fo" path="res://map/hell/relly.png" id="2_efkv3"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cuil247wm6n41" path="res://map/start/mainbg.png" id="3_0wqav"]
+=======
+[ext_resource type="Script" uid="uid://bu7iihgf7qbv5" path="res://map/backgrounds/background.gd" id="2_tyq1r"]
+[ext_resource type="Texture2D" uid="uid://cuil247wm6n41" path="res://map/start/mainbg.png" id="3_0wqav"]
+[ext_resource type="AudioStream" uid="uid://b8cwiuu853e6k" path="res://map/hell/Deltarune Chapter 2 OST - Flashback (Alternate Route) 4.mp3" id="4_p7cq6"]
+[ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="7_65jj4"]
+[ext_resource type="Texture2D" uid="uid://b2stk3iica3su" path="res://map/start/casino/CasinoBG1.png" id="7_j3ote"]
+[ext_resource type="AudioStream" uid="uid://ea5sgelhhyf8" path="res://map/tree/Delta Rune [OST] - Man (Secret Room_).mp3" id="8_ntff2"]
+[ext_resource type="AudioStream" uid="uid://cdt2f074ctxx1" path="res://map/start/ROBLOX Music - Horror.mp3" id="8_xgy1r"]
+[ext_resource type="Texture2D" uid="uid://b1oxoi485fquy" path="res://map/start/scary creepy wee wee ahhh.jpg" id="9_wv37x"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lyie"]
 shader = ExtResource("1_ix8yj")
@@ -19,6 +34,13 @@ colors = PackedColorArray(0.454929, 0.351106, 0.187989, 1, 0.529412, 0.411765, 0
 gradient = SubResource("Gradient_5jdw0")
 width = 200
 height = 1
+
+[sub_resource type="Gradient" id="Gradient_j3ote"]
+offsets = PackedFloat32Array(0.324675, 0.87013)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p1k3m"]
+gradient = SubResource("Gradient_j3ote")
 
 [node name="Backgrounds" type="Node2D"]
 z_index = -4096
@@ -78,3 +100,92 @@ repeat_times = 12
 texture = ExtResource("3_0wqav")
 flip_h = true
 flip_v = true
+<<<<<<< Updated upstream
+=======
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Start"]
+
+[node name="Casino" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+script = ExtResource("2_tyq1r")
+music = NodePath("AudioStreamPlayer2D")
+
+[node name="Color" type="Parallax2D" parent="Casino"]
+scroll_scale = Vector2(0.05, 0.05)
+scroll_offset = Vector2(-1889, -257)
+repeat_size = Vector2(1900, 1000)
+repeat_times = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Casino/Color"]
+offset_left = 499.0
+offset_top = 176.0
+offset_right = 999.0
+offset_bottom = 1175.0
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture1D_p1k3m")
+metadata/_edit_use_anchors_ = true
+
+[node name="Image1" type="Parallax2D" parent="Casino"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1000, 700)
+autoscroll = Vector2(10, -15)
+repeat_times = 10
+
+[node name="Mainbg" type="Sprite2D" parent="Casino/Image1"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.775, 0.775)
+texture = ExtResource("7_j3ote")
+
+[node name="Image2" type="Parallax2D" parent="Casino"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1000, 700)
+autoscroll = Vector2(-10, 15)
+repeat_times = 15
+
+[node name="Mainbg" type="Sprite2D" parent="Casino/Image2"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.775, 0.775)
+texture = ExtResource("7_j3ote")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Casino"]
+stream = ExtResource("7_65jj4")
+autoplay = true
+parameters/looping = true
+
+[node name="Tree" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+visible = false
+script = ExtResource("2_tyq1r")
+music = NodePath("AudioStreamPlayer")
+
+[node name="Color" type="Parallax2D" parent="Tree"]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(500, 500)
+repeat_times = 5
+
+[node name="ColorRect" type="ColorRect" parent="Tree/Color"]
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Tree"]
+stream = ExtResource("8_ntff2")
+autoplay = true
+
+[node name="Cpepsu" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+visible = false
+script = ExtResource("2_tyq1r")
+music = NodePath("AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Cpepsu"]
+stream = ExtResource("8_xgy1r")
+autoplay = true
+
+[node name="Image1" type="Parallax2D" parent="Cpepsu"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(612, 408)
+autoscroll = Vector2(-10, -8)
+repeat_times = 10
+
+[node name="Mainbg" type="Sprite2D" parent="Cpepsu/Image1"]
+texture = ExtResource("9_wv37x")
+>>>>>>> Stashed changes

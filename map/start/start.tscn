@@ -29,7 +29,19 @@
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
 [ext_resource type="Texture2D" uid="uid://rew1fnyy15mf" path="res://map/start/casino hell sign.png" id="26_7cpad"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://cm0nnp5vaiqge" path="res://map/start/casino/casino.tscn" id="28_33p1h"]
+=======
+[ext_resource type="Texture2D" uid="uid://bta7xcejuxnx0" path="res://map/start/FNAF_WORLD.EXE_0x6D1D53B3.png" id="26_yg3ev"]
+[ext_resource type="AudioStream" uid="uid://xw23mswgbaal" path="res://map/start/zachSound.ogg" id="27_d5ykx"]
+[ext_resource type="Script" uid="uid://j2qhohws5lnv" path="res://map/start/zach_fazbear.gd" id="27_lxd1a"]
+[ext_resource type="PackedScene" uid="uid://cm0nnp5vaiqge" path="res://map/start/casino/casino.tscn" id="28_33p1h"]
+[ext_resource type="Texture2D" uid="uid://c1a0xxbo4ql8t" path="res://map/start/cpepsu.png" id="34_5maui"]
+[ext_resource type="AudioStream" uid="uid://cqxxrxili38nh" path="res://map/start/cpepsutalk.ogg" id="35_0q1kr"]
+[ext_resource type="Texture2D" uid="uid://bti8umte10ym0" path="res://map/start/evil sign.png" id="36_ap4hh"]
+[ext_resource type="Script" uid="uid://dj1a0dybpsqjr" path="res://map/start/cpepsu.gd" id="37_0q1kr"]
+[ext_resource type="Script" uid="uid://bhy7mlewhfo4s" path="res://map/start/penisbutton.gd" id="37_gqkmp"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("4_repp3")
