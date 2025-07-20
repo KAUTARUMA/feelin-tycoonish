@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=18 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Texture2D" uid="uid://csfkused7fqh3" path="res://map/buyables/Gurt/gurtgreen.png" id="2_0q1kr"]
 [ext_resource type="Script" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
 [ext_resource type="AudioStream" uid="uid://b5vtqqalnrl20" path="res://map/buyables/Gurt/evil gurt laugh.ogg" id="3_gqkmp"]
 [ext_resource type="PackedScene" path="res://map/buyables/walker/walker.tscn" id="8_d02tw"]
+[ext_resource type="Script" uid="uid://76txqpak8igv" path="res://map/start/gurt.gd" id="8_jd16q"]
 [ext_resource type="PackedScene" uid="uid://clgn3yrm4ftfj" path="res://map/start/cpepsuscary/cpepsu_scary.tscn" id="13_5622p"]
 [ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="17_oawyc"]
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
@@ -50,7 +51,23 @@ stream = ExtResource("3_gqkmp")
 [node name="Gurt" type="Node2D" parent="StartStuff/GurtBuyable"]
 
 [node name="Gurt" type="Sprite2D" parent="StartStuff/GurtBuyable/Gurt"]
+z_index = 1
 texture = ExtResource("2_0q1kr")
+script = ExtResource("8_jd16q")
+
+[node name="Button" type="Button" parent="StartStuff/GurtBuyable/Gurt/Gurt"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.023871
+anchor_top = 0.0558156
+anchor_right = 0.81
+anchor_bottom = 0.944
+offset_left = -123.92
+offset_top = -173.368
+offset_right = -123.88
+offset_bottom = -173.568
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Walker0Button" parent="StartStuff" instance=ExtResource("1_2eqjb")]
 position = Vector2(1098, 128)
@@ -145,4 +162,6 @@ shape = SubResource("RectangleShape2D_gtwnl")
 
 [node name="CpepsuScary" parent="." instance=ExtResource("13_5622p")]
 
+[connection signal="button_down" from="StartStuff/GurtBuyable/Gurt/Gurt/Button" to="StartStuff/GurtBuyable/Gurt/Gurt" method="_on_button_button_down"]
+[connection signal="button_up" from="StartStuff/GurtBuyable/Gurt/Gurt/Button" to="StartStuff/GurtBuyable/Gurt/Gurt" method="_on_button_button_up"]
 [connection signal="body_entered" from="StartStuff/ZachFazbear/TalkHitbox" to="StartStuff/ZachFazbear" method="_on_talk_hitbox_body_entered"]

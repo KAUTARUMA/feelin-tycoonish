@@ -110,6 +110,7 @@ flip_v = true
 bus = &"Music"
 
 [node name="Casino" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+visible = false
 script = ExtResource("2_tyq1r")
 music = NodePath("AudioStreamPlayer2D")
 
