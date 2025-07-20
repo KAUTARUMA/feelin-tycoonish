@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://pvcub5rj0pt"]
+[gd_scene load_steps=4 format=3 uid="uid://pvcub5rj0pt"]
 
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="1_0mvlg"]
 [ext_resource type="Texture2D" uid="uid://nja1sq2mfvse" path="res://map/tree/tree.png" id="1_h2qj4"]
+[ext_resource type="Texture2D" uid="uid://cnclxdxnumdtx" path="res://map/tree/Screenshot 2025-07-20 021428.png" id="3_ajbme"]
 
 [node name="Tree" type="Node2D"]
 scale = Vector2(2.64, 2.88)
+
+[node name="Screenshot2025-07-20021428" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.0784314)
+position = Vector2(2.27275, -52.0833)
+scale = Vector2(0.168946, 0.257336)
+texture = ExtResource("3_ajbme")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
