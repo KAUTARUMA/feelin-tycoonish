@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqt7ggm3eiiq7"]
+[gd_scene load_steps=24 format=3 uid="uid://bqt7ggm3eiiq7"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfa7ulse7q" path="res://map/start/sockzone/house.png" id="1_1f1e4"]
 [ext_resource type="Texture2D" uid="uid://nsqeutbe0s4e" path="res://map/start/sockzone/sox2.png" id="2_cjukr"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://b74btp8vqqqpk" path="res://map/start/sockzone/portal.png" id="9_dglsg"]
 [ext_resource type="Script" uid="uid://clvt7ddbgp25l" path="res://map/start/sockzone/press e.gd" id="10_mduxt"]
 [ext_resource type="Texture2D" uid="uid://dtsfliorhirpg" path="res://map/start/sockzone/big fat lard.png" id="12_didc5"]
-[ext_resource type="Script" path="res://map/start/sockzone/stoopidfatguy.gd" id="13_x6u66"]
+[ext_resource type="Script" uid="uid://djwtctg4p1vdd" path="res://map/start/sockzone/stoopidfatguy.gd" id="13_x6u66"]
+[ext_resource type="Script" uid="uid://nj7wbojexj05" path="res://map/start/sockzone/stewie_buyable.gd" id="14_dqs1e"]
+[ext_resource type="Texture2D" uid="uid://drcw616gos0m" path="res://map/buyables/stewie.png" id="15_mnmdx"]
+[ext_resource type="Texture2D" uid="uid://ce4op4sb3e7iv" path="res://map/buyables/note.png" id="16_mnmdx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n3xu8"]
 font_size = 24
@@ -135,6 +138,12 @@ buyable_id = "dash"
 buyable_name = "New Mechanic"
 price = 50
 
+[node name="StewieButton" parent="." instance=ExtResource("6_dqs1e")]
+position = Vector2(1270, 904)
+buyable_id = "stewie"
+buyable_name = "Stewie"
+price = 60
+
 [node name="Temmie flakes reminds me of jeffy" type="Area2D" parent="."]
 script = ExtResource("7_mnmdx")
 
@@ -152,7 +161,7 @@ position = Vector2(780, 417)
 shape = SubResource("RectangleShape2D_gn003")
 
 [node name="Marker2D" type="Marker2D" parent="Temmie flakes reminds me of jeffy"]
-position = Vector2(1206, 1293)
+position = Vector2(1195, 1292)
 
 [node name="stoopidfatguy" type="Sprite2D" parent="."]
 position = Vector2(1539, 1260)
@@ -165,3 +174,22 @@ libraries = {
 &"": SubResource("AnimationLibrary_a2vf3")
 }
 autoplay = "fat walking"
+
+[node name="StewieBuyable" type="Node2D" parent="."]
+position = Vector2(1731, 891)
+script = ExtResource("14_dqs1e")
+id = "stewie"
+metadata/_custom_type_script = "uid://de7j141xed3p4"
+
+[node name="Sprite2D" type="Sprite2D" parent="StewieBuyable"]
+position = Vector2(-402, 360)
+scale = Vector2(1.76515, 1.76515)
+texture = ExtResource("15_mnmdx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="StewieBuyable"]
+position = Vector2(-363, 286)
+texture = ExtResource("16_mnmdx")
+gravity = Vector2(0, -980)
+initial_velocity_max = 272.73
+angular_velocity_min = -661.82
+angular_velocity_max = 618.18

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhkfs57qbmi38"]
+[gd_scene load_steps=13 format=3 uid="uid://dhkfs57qbmi38"]
 
 [ext_resource type="Script" uid="uid://dk371qwdblp0q" path="res://map/backgrounds/backgrounds.gd" id="1_1koha"]
 [ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/wavy.gdshader" id="1_ix8yj"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b8cwiuu853e6k" path="res://map/hell/Deltarune Chapter 2 OST - Flashback (Alternate Route) 4.mp3" id="4_p7cq6"]
 [ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="7_65jj4"]
 [ext_resource type="AudioStream" uid="uid://ea5sgelhhyf8" path="res://map/tree/Delta Rune [OST] - Man (Secret Room_).mp3" id="8_ntff2"]
+[ext_resource type="AudioStream" uid="uid://ckv554d0ckok4" path="res://map/buyables/fat/Fat guy tuba song.mp3" id="8_xgy1r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lyie"]
 shader = ExtResource("1_ix8yj")
@@ -49,7 +50,6 @@ texture = ExtResource("2_efkv3")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Hell/Hell"]
 stream = ExtResource("4_p7cq6")
 autoplay = true
-bus = &"Music"
 
 [node name="Start" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
 visible = false
@@ -95,7 +95,6 @@ flip_h = true
 flip_v = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Start"]
-bus = &"Music"
 
 [node name="Casino" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
 visible = false
@@ -105,7 +104,16 @@ music = NodePath("AudioStreamPlayer2D")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Casino"]
 stream = ExtResource("7_65jj4")
 autoplay = true
-bus = &"Music"
+
+[node name="Fat" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+visible = false
+script = ExtResource("2_tyq1r")
+music = NodePath("AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Fat"]
+stream = ExtResource("8_xgy1r")
+volume_db = -4.685
+autoplay = true
 
 [node name="Tree" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
 visible = false
@@ -125,4 +133,3 @@ color = Color(0, 0, 0, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Tree"]
 stream = ExtResource("8_ntff2")
 autoplay = true
-bus = &"Music"
