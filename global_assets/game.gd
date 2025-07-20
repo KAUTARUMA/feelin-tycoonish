@@ -48,6 +48,8 @@ func _process(_delta: float) -> void:
 		# if we're holding TAB (defined in project settings)
 		if Input.is_action_pressed("debug_speed"):
 			Engine.time_scale = 25
+		elif Input.is_action_pressed("debug_slow"):
+			Engine.time_scale = 0.25
 		else:
 			Engine.time_scale = 1
 		

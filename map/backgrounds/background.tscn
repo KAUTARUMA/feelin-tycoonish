@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhkfs57qbmi38"]
+[gd_scene load_steps=14 format=3 uid="uid://dhkfs57qbmi38"]
 
 [ext_resource type="Script" uid="uid://dk371qwdblp0q" path="res://map/backgrounds/backgrounds.gd" id="1_1koha"]
 [ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/wavy.gdshader" id="1_ix8yj"]
@@ -8,7 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://b8cwiuu853e6k" path="res://map/hell/Deltarune Chapter 2 OST - Flashback (Alternate Route) 4.mp3" id="4_p7cq6"]
 [ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="7_65jj4"]
 [ext_resource type="AudioStream" uid="uid://ea5sgelhhyf8" path="res://map/tree/Delta Rune [OST] - Man (Secret Room_).mp3" id="8_ntff2"]
-[ext_resource type="AudioStream" uid="uid://ckv554d0ckok4" path="res://map/buyables/fat/Fat guy tuba song.mp3" id="8_xgy1r"]
+[ext_resource type="AudioStream" uid="uid://ckv554d0ckok4" path="res://map/buyables/fat/Fat guy tuba song.mp3" id="8_fatguytubasong"]
+[ext_resource type="AudioStream" uid="uid://cdt2f074ctxx1" path="res://map/start/ROBLOX Music - Horror.mp3" id="8_xgy1r"]
+[ext_resource type="Texture2D" uid="uid://b1oxoi485fquy" path="res://map/start/scary creepy wee wee ahhh.jpg" id="9_wv37x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lyie"]
 shader = ExtResource("1_ix8yj")
@@ -111,7 +113,7 @@ script = ExtResource("2_tyq1r")
 music = NodePath("AudioStreamPlayer2D")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Fat"]
-stream = ExtResource("8_xgy1r")
+stream = ExtResource("8_fatguytubasong")
 volume_db = -4.685
 autoplay = true
 
@@ -133,3 +135,21 @@ color = Color(0, 0, 0, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Tree"]
 stream = ExtResource("8_ntff2")
 autoplay = true
+
+[node name="Cpepsu" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
+visible = false
+script = ExtResource("2_tyq1r")
+music = NodePath("AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Cpepsu"]
+stream = ExtResource("8_xgy1r")
+autoplay = true
+
+[node name="Image1" type="Parallax2D" parent="Cpepsu"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(612, 408)
+autoscroll = Vector2(-10, -8)
+repeat_times = 10
+
+[node name="Mainbg" type="Sprite2D" parent="Cpepsu/Image1"]
+texture = ExtResource("9_wv37x")
