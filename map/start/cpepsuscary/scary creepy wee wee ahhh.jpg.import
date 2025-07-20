@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bti8umte10ym0"
-path="res://.godot/imported/evil sign.png-af208ba433e36a06c0e499d22979d100.ctex"
+uid="uid://b1oxoi485fquy"
+path="res://.godot/imported/scary creepy wee wee ahhh.jpg-54ababe8170cedfa7463900fe783d374.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://map/start/evil sign.png"
-dest_files=["res://.godot/imported/evil sign.png-af208ba433e36a06c0e499d22979d100.ctex"]
+source_file="res://map/start/cpepsuscary/scary creepy wee wee ahhh.jpg"
+dest_files=["res://.godot/imported/scary creepy wee wee ahhh.jpg-54ababe8170cedfa7463900fe783d374.ctex"]
 
 [params]
 

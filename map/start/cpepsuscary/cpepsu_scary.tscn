@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://clgn3yrm4ftfj"]
+
+[ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="3_q6g2r"]
+[ext_resource type="Texture2D" uid="uid://bti8umte10ym0" path="res://map/start/cpepsuscary/evil sign.png" id="5_oleu1"]
+[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="6_mku8o"]
+[ext_resource type="Script" uid="uid://bhy7mlewhfo4s" path="res://map/start/penisbutton.gd" id="7_xa2x5"]
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="8_l0yjm"]
+[ext_resource type="Texture2D" uid="uid://c1a0xxbo4ql8t" path="res://map/start/cpepsuscary/cpepsu.png" id="9_35d33"]
+[ext_resource type="Script" uid="uid://dj1a0dybpsqjr" path="res://map/start/cpepsuscary/cpepsu.gd" id="10_cbaeo"]
+[ext_resource type="AudioStream" uid="uid://cqxxrxili38nh" path="res://map/start/cpepsuscary/cpepsutalk.ogg" id="11_7qdr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxd1a"]
+size = Vector2(186, 193)
+
+[node name="CpepsuScary" type="Node2D"]
+
+[node name="EvilSign" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-3478, 389)
+scale = Vector2(0.548544, 0.548544)
+texture = ExtResource("5_oleu1")
+
+[node name="BuyableButton" parent="." instance=ExtResource("6_mku8o")]
+position = Vector2(-7272, 124)
+script = ExtResource("7_xa2x5")
+
+[node name="TextName" parent="BuyableButton" index="1"]
+text = "hurt yourself and others button"
+
+[node name="Price" parent="BuyableButton/TextName" index="1"]
+text = "1$"
+
+[node name="TalkingSpeechBubble" parent="BuyableButton" instance=ExtResource("3_q6g2r")]
+offset_left = 71.0
+offset_top = -64.0
+offset_right = 251.0
+offset_bottom = 11.0
+text = "please do not do that"
+metadata/_edit_use_anchors_ = true
+
+[node name="123" type="StaticBody2D" parent="."]
+
+[node name="PolygonCollisionAndShape" type="Polygon2D" parent="123"]
+position = Vector2(-6611.55, 488.359)
+scale = Vector2(0.368222, 0.289096)
+color = Color(0.0303592, 0.165495, 0.0999039, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -257, 2222.94, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="123"]
+position = Vector2(-3785, 558)
+scale = Vector2(0.0508515, 0.204319)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="123"]
+position = Vector2(-3472, 612)
+scale = Vector2(0.0394179, 0.13516)
+color = Color(0.382993, 0.188264, 0.0587657, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape4" type="Polygon2D" parent="123"]
+position = Vector2(-5293, 621)
+scale = Vector2(0.143965, 0.222272)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape5" type="Polygon2D" parent="123"]
+position = Vector2(-4685, 581)
+scale = Vector2(0.0465762, 0.170895)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape6" type="Polygon2D" parent="123"]
+position = Vector2(-4219, 598)
+scale = Vector2(0.0789501, 0.101022)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -568.973, 3069.36, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape7" type="Polygon2D" parent="123"]
+position = Vector2(-5739, 558)
+scale = Vector2(0.0262477, 0.0819117)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape8" type="Polygon2D" parent="123"]
+position = Vector2(-5860, 487)
+scale = Vector2(0.0147917, 0.0392611)
+color = Color(0.384314, 0.188235, 0.0588235, 1)
+polygon = PackedVector2Array(1861.35, -179.548, -2361.65, -169.548, -2366.65, 303.452, -184.014, 1651.13, 1875.35, 320.452)
+script = ExtResource("8_l0yjm")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="Cpepsu" type="Sprite2D" parent="."]
+position = Vector2(-6937, 338)
+texture = ExtResource("9_35d33")
+script = ExtResource("10_cbaeo")
+
+[node name="TalkingSpeechBubble" parent="Cpepsu" instance=ExtResource("3_q6g2r")]
+offset_left = 22.0
+offset_top = -157.0
+offset_right = 202.0
+offset_bottom = -81.0
+sound = ExtResource("11_7qdr8")
+text = "You dont wanna buy this... Its effed up..."
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="Cpepsu"]
+position = Vector2(0, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cpepsu/TalkHitbox"]
+position = Vector2(2, -29)
+shape = SubResource("RectangleShape2D_lxd1a")
+
+[connection signal="body_entered" from="Cpepsu/TalkHitbox" to="Cpepsu" method="_on_talk_hitbox_body_entered"]
+
+[editable path="BuyableButton"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdukqnlgcdg3b"]
+[gd_scene load_steps=13 format=3 uid="uid://bdukqnlgcdg3b"]
 
 [ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
 [ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
@@ -17,6 +17,9 @@ size = Vector2(2870, 2996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lyie"]
 size = Vector2(17173, 4401)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8e5r"]
+size = Vector2(1934, 1658)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxmgb"]
 size = Vector2(4664, 2996)
@@ -77,6 +80,7 @@ script = ExtResource("6_7lyie")
 area_name = "Tree"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/TreeArea"]
+shape = SubResource("RectangleShape2D_e8e5r")
 
 [node name="CpepsuZone" type="Area2D" parent="Areas"]
 script = ExtResource("6_7lyie")
