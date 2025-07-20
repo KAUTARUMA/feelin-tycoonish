@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://bdukqnlgcdg3b"]
 
 [ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
-[ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
+[ext_resource type="PackedScene" uid="uid://bvlxcgoh4oamq" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
 [ext_resource type="PackedScene" uid="uid://cmg6jlrsx2q7u" path="res://map/hell/hell.tscn" id="2_4hjbm"]
 [ext_resource type="Script" uid="uid://b7vwm3thj0fwj" path="res://map/death_barrier.gd" id="3_4hjbm"]
-[ext_resource type="PackedScene" uid="uid://pvcub5rj0pt" path="res://map/tree/tree.tscn" id="4_7lyie"]
+[ext_resource type="PackedScene" path="res://map/tree/tree.tscn" id="4_7lyie"]
 [ext_resource type="Script" uid="uid://ckss0eshbbfyq" path="res://map/background_area.gd" id="6_7lyie"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a0dt8"]

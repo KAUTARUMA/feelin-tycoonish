@@ -1,16 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://cm0nnp5vaiqge"]
+[gd_scene load_steps=17 format=3 uid="uid://cm0nnp5vaiqge"]
 
-[ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="1_01vfd"]
 [ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://map/start/casino/Table_BigChips_BlueLose.png" id="2_1yep1"]
 [ext_resource type="Texture2D" uid="uid://bu5qtb2iskkx8" path="res://map/start/casino/Table_Bowling.png" id="3_tedpa"]
 [ext_resource type="Texture2D" uid="uid://co2d6btwefehx" path="res://map/start/casino/Table_Parappa.png" id="4_j6btg"]
 [ext_resource type="Texture2D" uid="uid://5de26mevsj2s" path="res://map/start/casino/Table_Vacant.png" id="5_bjm4i"]
 [ext_resource type="Texture2D" uid="uid://dakgmm1ql017p" path="res://map/start/casino/Table_Standard.png" id="6_bo60h"]
 [ext_resource type="Texture2D" uid="uid://63el1v6fqg4w" path="res://map/start/casino/cameos/Trafeus-Feelin.svg" id="7_m1473"]
-[ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
+[ext_resource type="Script" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
 [ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://map/start/casino/cameos/Miguel-Feelin.svg" id="9_mcf8t"]
-[ext_resource type="Script" uid="uid://n052ynpknfvm" path="res://map/start/casino/basketball.gd" id="10_dd1rw"]
-[ext_resource type="Script" uid="uid://mc1cjwdprghw" path="res://addons/godot_texture_atlas/atlas_sprite.gd" id="11_01vfd"]
+[ext_resource type="Script" path="res://map/start/casino/basketball.gd" id="10_dd1rw"]
+[ext_resource type="Script" path="res://addons/godot_texture_atlas/atlas_sprite.gd" id="11_01vfd"]
 [ext_resource type="JSON" path="res://map/start/casino/basketball/Animation.json" id="12_1yep1"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="12_ylwr5"]
 
@@ -111,13 +110,6 @@ _data = {
 
 [node name="Casino Props" type="Node2D" parent="."]
 position = Vector2(2453, -20)
-
-[node name="Casino Music" type="AudioStreamPlayer2D" parent="Casino Props"]
-position = Vector2(-2363, 71)
-stream = ExtResource("1_01vfd")
-volume_db = -10.895
-autoplay = true
-parameters/looping = true
 
 [node name="TableBigChipsBlueLose" type="Sprite2D" parent="Casino Props"]
 position = Vector2(0, -7.00003)
