@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvlxcgoh4oamq"]
+[gd_scene load_steps=19 format=3 uid="uid://bvlxcgoh4oamq"]
 
 [ext_resource type="Script" uid="uid://dk371qwdblp0q" path="res://map/backgrounds/backgrounds.gd" id="1_1koha"]
 [ext_resource type="Shader" uid="uid://cxn521o2h6hwo" path="res://shaders/wavy.gdshader" id="1_ix8yj"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cuil247wm6n41" path="res://map/start/mainbg.png" id="3_0wqav"]
 [ext_resource type="AudioStream" uid="uid://b8cwiuu853e6k" path="res://map/hell/Deltarune Chapter 2 OST - Flashback (Alternate Route) 4.mp3" id="4_p7cq6"]
 [ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="7_65jj4"]
+[ext_resource type="Texture2D" uid="uid://bvs4f6vyixful" path="res://map/start/casino/casinoBG2.png" id="7_bfbxo"]
+[ext_resource type="Texture2D" uid="uid://v1kw6aphu4kp" path="res://map/start/casino/CasinoBGNeweer.png" id="8_bfbxo"]
 [ext_resource type="AudioStream" uid="uid://ckv554d0ckok4" path="res://map/buyables/fat/Fat guy tuba song.mp3" id="8_fatguytubasong"]
 [ext_resource type="AudioStream" uid="uid://ea5sgelhhyf8" path="res://map/tree/Delta Rune [OST] - Man (Secret Room_).mp3" id="8_ntff2"]
 [ext_resource type="AudioStream" uid="uid://cdt2f074ctxx1" path="res://map/start/cpepsuscary/ROBLOX Music - Horror.mp3" id="8_xgy1r"]
@@ -26,6 +28,13 @@ colors = PackedColorArray(0.454929, 0.351106, 0.187989, 1, 0.529412, 0.411765, 0
 gradient = SubResource("Gradient_5jdw0")
 width = 200
 height = 1
+
+[sub_resource type="Gradient" id="Gradient_bfbxo"]
+offsets = PackedFloat32Array(0, 0.25974, 0.798701, 1)
+colors = PackedColorArray(0.205964, 0.270507, 0.499428, 1, 0.239216, 0.309804, 0.556863, 1, 0.22963, 0.298475, 0.540305, 1, 0.196078, 0.258824, 0.482353, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0w1c7"]
+gradient = SubResource("Gradient_bfbxo")
 
 [node name="Backgrounds" type="Node2D"]
 z_index = -4096
@@ -101,9 +110,46 @@ flip_v = true
 bus = &"Music"
 
 [node name="Casino" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
-visible = false
 script = ExtResource("2_tyq1r")
 music = NodePath("AudioStreamPlayer2D")
+
+[node name="Color2" type="Parallax2D" parent="Casino"]
+scroll_scale = Vector2(0.05, 0.05)
+scroll_offset = Vector2(-1889, -257)
+repeat_size = Vector2(1900, 1000)
+repeat_times = 5
+
+[node name="TextureRect" type="TextureRect" parent="Casino/Color2"]
+offset_left = 499.0
+offset_top = 176.0
+offset_right = 999.0
+offset_bottom = 1175.0
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture1D_0w1c7")
+
+[node name="Image2" type="Parallax2D" parent="Casino/Color2"]
+modulate = Color(0.38, 0.586667, 1, 0.596078)
+scale = Vector2(0.845, 0.845)
+scroll_offset = Vector2(-145, -150)
+repeat_size = Vector2(1000, 500)
+autoscroll = Vector2(-5, -5)
+repeat_times = 16
+
+[node name="Mainbg" type="Sprite2D" parent="Casino/Color2/Image2"]
+position = Vector2(11.8343, 0)
+texture = ExtResource("7_bfbxo")
+flip_h = true
+flip_v = true
+
+[node name="Image 1" type="Parallax2D" parent="Casino"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1124, 400)
+autoscroll = Vector2(0, 15)
+repeat_times = 10
+
+[node name="Mainbg" type="Sprite2D" parent="Casino/Image 1"]
+texture = ExtResource("8_bfbxo")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Casino"]
 stream = ExtResource("7_65jj4")
