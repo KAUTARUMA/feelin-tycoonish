@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Texture2D" uid="uid://csfkused7fqh3" path="res://map/buyables/Gurt/gurtgreen.png" id="2_0q1kr"]
-[ext_resource type="Script" uid="uid://v033sxfivegl" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
+[ext_resource type="Script" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
 [ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
 [ext_resource type="AudioStream" uid="uid://b5vtqqalnrl20" path="res://map/buyables/Gurt/evil gurt laugh.ogg" id="3_gqkmp"]
 [ext_resource type="Texture2D" uid="uid://c30tbxn6synlx" path="res://map/buyables/walker/stage.svg" id="3_p5ndp"]
