@@ -1,12 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=17 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Texture2D" uid="uid://csfkused7fqh3" path="res://map/buyables/Gurt/gurtgreen.png" id="2_0q1kr"]
 [ext_resource type="Script" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
-[ext_resource type="Script" uid="uid://dp4ok5fnw5x2d" path="res://map/buyables/walker/walker.gd" id="2_oawyc"]
 [ext_resource type="AudioStream" uid="uid://b5vtqqalnrl20" path="res://map/buyables/Gurt/evil gurt laugh.ogg" id="3_gqkmp"]
-[ext_resource type="Texture2D" uid="uid://c30tbxn6synlx" path="res://map/buyables/walker/stage.svg" id="3_p5ndp"]
-[ext_resource type="Texture2D" uid="uid://c4dnhesc0ffom" path="res://map/buyables/walker/pot_walk_spritesheet.png" id="4_repp3"]
+[ext_resource type="PackedScene" uid="uid://bj7e4cpuy2wsi" path="res://map/buyables/walker/walker.tscn" id="8_d02tw"]
 [ext_resource type="PackedScene" uid="uid://clgn3yrm4ftfj" path="res://map/start/cpepsuscary/cpepsu_scary.tscn" id="13_5622p"]
 [ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="17_oawyc"]
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
@@ -17,54 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://xw23mswgbaal" path="res://map/start/zachSound.ogg" id="27_d5ykx"]
 [ext_resource type="Script" path="res://map/start/zach_fazbear.gd" id="27_lxd1a"]
 [ext_resource type="PackedScene" uid="uid://cm0nnp5vaiqge" path="res://map/start/casino/casino.tscn" id="28_33p1h"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
-atlas = ExtResource("4_repp3")
-region = Rect2(0, 0, 225, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
-atlas = ExtResource("4_repp3")
-region = Rect2(225, 0, 225, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
-atlas = ExtResource("4_repp3")
-region = Rect2(450, 0, 225, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
-atlas = ExtResource("4_repp3")
-region = Rect2(675, 0, 225, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
-atlas = ExtResource("4_repp3")
-region = Rect2(900, 0, 225, 240)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h2yge"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lquwl")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7mycd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_272bh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5vw27")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kek77")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 6.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtwnl"]
 size = Vector2(186, 193)
@@ -81,12 +31,6 @@ position = Vector2(2705, -4)
 position = Vector2(1660, 22)
 
 [node name="StartStuff" type="Node2D" parent="."]
-
-[node name="WalkerButton" parent="StartStuff" instance=ExtResource("1_2eqjb")]
-position = Vector2(1022, 128)
-buyable_id = "walker0"
-buyable_name = "Potasium Walker"
-price = 0
 
 [node name="GurtButton" parent="StartStuff" instance=ExtResource("1_2eqjb")]
 position = Vector2(1715, 102)
@@ -108,33 +52,62 @@ stream = ExtResource("3_gqkmp")
 [node name="Gurt" type="Sprite2D" parent="StartStuff/GurtBuyable/Gurt"]
 texture = ExtResource("2_0q1kr")
 
-[node name="WalkerUpgradeButton" parent="StartStuff" instance=ExtResource("1_2eqjb")]
-position = Vector2(1022, 128)
+[node name="Walker0Button" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1098, 128)
+buyable_id = "walker0"
+buyable_name = "Potasium Walker"
+price = 0
+
+[node name="Walker0UpgradeButton0" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1098, 128)
 buyable_id = "walker0_upgrade0"
 buyable_name = "Faster Production Speed"
 price = 4
 requires = Array[String](["walker0"])
 
-[node name="WalkerUpgradeButton2" parent="StartStuff" instance=ExtResource("1_2eqjb")]
-position = Vector2(1022, 128)
+[node name="Walker0UpgradeButton1" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1098, 128)
 buyable_id = "walker0_upgrade1"
 buyable_name = "More Potasi-Value"
 price = 16
-requires = Array[String](["walker0", "walker0_upgrade0"])
+requires = Array[String](["walker0_upgrade0"])
 
-[node name="Walker" type="Node2D" parent="StartStuff"]
-position = Vector2(558, 120)
-script = ExtResource("2_oawyc")
-id = "walker0"
+[node name="Walker1Button" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1098, 129)
+buyable_id = "walker1"
+buyable_name = "Potasium Walker"
+price = 120
+requires = Array[String](["walker0_upgrade1"])
 
-[node name="Stage" type="Sprite2D" parent="StartStuff/Walker"]
-texture = ExtResource("3_p5ndp")
+[node name="Walker1UpgradeButton0" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1098, 129)
+buyable_id = "walker1_upgrade0"
+buyable_name = "Faster Production Speed"
+price = 160
+requires = Array[String](["walker1"])
 
-[node name="Potasium" type="AnimatedSprite2D" parent="StartStuff/Walker"]
-position = Vector2(-190, -30)
-scale = Vector2(0.744444, 0.744444)
-sprite_frames = SubResource("SpriteFrames_h2yge")
-animation = &"idle"
+[node name="Walker1UpgradeButton1" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1098, 129)
+buyable_id = "walker1_upgrade1"
+buyable_name = "More Potasi-Value"
+price = 240
+requires = Array[String](["walker1_upgrade0"])
+
+[node name="Parallax2D" type="Parallax2D" parent="StartStuff"]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="Walker0" parent="StartStuff/Parallax2D" instance=ExtResource("8_d02tw")]
+position = Vector2(479, 138)
+
+[node name="Parallax2D2" type="Parallax2D" parent="StartStuff"]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Walker1" parent="StartStuff/Parallax2D2" instance=ExtResource("8_d02tw")]
+modulate = Color(0.964706, 0.933333, 0.917647, 1)
+z_index = -1
+position = Vector2(566, 156)
+scale = Vector2(0.8, 0.8)
+id = "walker1"
 
 [node name="CasinoHellSign" type="Sprite2D" parent="StartStuff"]
 z_index = -1
@@ -150,7 +123,7 @@ polygon = PackedVector2Array(-265, 516, 32, 509, 357, 320, 588, 514, 2735, 506, 
 script = ExtResource("24_5li7y")
 
 [node name="ZachFazbear" type="Sprite2D" parent="StartStuff"]
-position = Vector2(1428, 401)
+position = Vector2(1427, 401)
 texture = ExtResource("26_yg3ev")
 script = ExtResource("27_lxd1a")
 

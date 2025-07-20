@@ -26,6 +26,7 @@ script = ExtResource("7_xa2x5")
 
 [node name="TextName" parent="BuyableButton" index="1"]
 text = "hurt yourself and others button"
+script = null
 
 [node name="Price" parent="BuyableButton/TextName" index="1"]
 text = "1$"
