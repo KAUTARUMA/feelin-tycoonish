@@ -10,9 +10,9 @@
 [ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
 [ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://map/start/casino/cameos/Miguel-Feelin.svg" id="9_mcf8t"]
 [ext_resource type="Script" uid="uid://n052ynpknfvm" path="res://map/start/casino/basketball.gd" id="10_dd1rw"]
-[ext_resource type="Texture2D" uid="uid://dsiq3dhddd3fd" path="res://map/start/sockzone/fat chunks.png" id="10_j6btg"]
+[ext_resource type="Texture2D" uid="uid://dsiq3dhddd3fd" path="res://map/start/casino/razby.png" id="10_j6btg"]
 [ext_resource type="Script" uid="uid://mc1cjwdprghw" path="res://addons/godot_texture_atlas/atlas_sprite.gd" id="11_01vfd"]
-[ext_resource type="Script" uid="uid://ctutkpnptsse5" path="res://map/start/sockzone/fat_chunks_2.gd" id="11_bjm4i"]
+[ext_resource type="Script" uid="uid://ctutkpnptsse5" path="res://map/start/casino/razby.gd" id="11_bjm4i"]
 [ext_resource type="JSON" path="res://map/start/casino/basketball/Animation.json" id="12_1yep1"]
 [ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="12_bo60h"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="12_ylwr5"]
@@ -147,7 +147,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Casino Props/fat chunks 2/TalkHitbox"]
 position = Vector2(-8.9873, 26.9984)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bo60h")
 
 [node name="TableBigChipsBlueLose" type="Sprite2D" parent="Casino Props"]
