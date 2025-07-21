@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://besbnqrwj6mta"
+path="res://.godot/imported/razby talk empic.mp3-82bf64fe6d9dcd88e2b9618475309b26.mp3str"
+
+[deps]
+
+source_file="res://map/start/casino/razby talk empic.mp3"
+dest_files=["res://.godot/imported/razby talk empic.mp3-82bf64fe6d9dcd88e2b9618475309b26.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
