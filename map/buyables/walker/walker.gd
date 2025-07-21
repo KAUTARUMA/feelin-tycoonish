@@ -47,6 +47,8 @@ func _on_buy():
 		Game.money += value
 		# this function takes in global coordinates, so we need to convert it accordingly
 		_play_coin_sound(to_global(Vector2(259, -45)))
+		# emits the spawn plinko ball signal
+		Game.spawn_plinko_ball.emit()
 		
 		# plays his idle animation
 		potasium.play("idle")

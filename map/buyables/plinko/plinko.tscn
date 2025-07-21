@@ -1,0 +1,331 @@
+[gd_scene load_steps=10 format=3 uid="uid://bq1734ll661q7"]
+
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="1_drxbf"]
+[ext_resource type="Script" uid="uid://bxuw8wylml156" path="res://map/buyables/plinko/plinko.gd" id="1_x2s3w"]
+[ext_resource type="Texture2D" uid="uid://cnpxbukt1edrp" path="res://global_assets/temp.png" id="3_7wq0u"]
+[ext_resource type="PackedScene" uid="uid://7amgl6nwgsjw" path="res://map/buyables/plinko/plink.tscn" id="3_oir0l"]
+[ext_resource type="Script" uid="uid://cvv7gu6ytxa5t" path="res://map/buyables/plinko/dropper.gd" id="4_x2s3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oir0l"]
+size = Vector2(120, 9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oir0l"]
+font_size = 102
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2s3w"]
+size = Vector2(156, 9)
+
+[sub_resource type="Curve2D" id="Curve2D_oeo1h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 25, 0, -100, 0, 100, 0, 220.6, 8, 0, 0, 0, 0, 410.2, 0, 100, 0, -100, 0, 220.6, -8, 0, 0, 0, 0, 25, 0)
+}
+point_count = 5
+
+[node name="Plinko" type="Node2D"]
+script = ExtResource("1_x2s3w")
+
+[node name="PrizeAreas" type="Node2D" parent="."]
+
+[node name="Prize10" type="Area2D" parent="PrizeAreas"]
+position = Vector2(51, 501)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PrizeAreas/Prize10"]
+position = Vector2(12, 5.5)
+shape = SubResource("RectangleShape2D_oir0l")
+
+[node name="ColorRect" type="ColorRect" parent="PrizeAreas/Prize10"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.984314, 1, 0, 0.231373)
+
+[node name="Label" type="Label" parent="PrizeAreas/Prize10"]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 141.0
+scale = Vector2(0.065, 0.065)
+text = "10"
+label_settings = SubResource("LabelSettings_oir0l")
+
+[node name="Prize10_1" type="Area2D" parent="PrizeAreas"]
+position = Vector2(358, 501)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PrizeAreas/Prize10_1"]
+position = Vector2(12, 5.5)
+shape = SubResource("RectangleShape2D_oir0l")
+
+[node name="ColorRect" type="ColorRect" parent="PrizeAreas/Prize10_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.984314, 1, 0, 0.231373)
+
+[node name="Label" type="Label" parent="PrizeAreas/Prize10_1"]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 141.0
+scale = Vector2(0.065, 0.065)
+text = "10"
+label_settings = SubResource("LabelSettings_oir0l")
+
+[node name="Prize5" type="Area2D" parent="PrizeAreas"]
+position = Vector2(200, 501)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PrizeAreas/Prize5"]
+position = Vector2(12, 5.5)
+shape = SubResource("RectangleShape2D_x2s3w")
+
+[node name="ColorRect" type="ColorRect" parent="PrizeAreas/Prize5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 1, 0.231373)
+
+[node name="Label" type="Label" parent="PrizeAreas/Prize5"]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 141.0
+scale = Vector2(0.065, 0.065)
+text = "5"
+label_settings = SubResource("LabelSettings_oir0l")
+
+[node name="PolygonCollisionAndShape4" type="Polygon2D" parent="."]
+position = Vector2(214, 286)
+script = ExtResource("1_drxbf")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(214, 286)
+collision_layer = 2
+collision_mask = 2
+
+[node name="PolygonCollisionAndShape" type="Polygon2D" parent="Walls"]
+position = Vector2(-214, -286)
+polygon = PackedVector2Array(0, 0, 0, 512, 5, 512, 5, 0)
+script = ExtResource("1_drxbf")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="Walls"]
+position = Vector2(216.22, -286)
+polygon = PackedVector2Array(0, 0, 0, 512, 5, 512, 5, 0)
+script = ExtResource("1_drxbf")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="Walls"]
+position = Vector2(-214, 230)
+rotation = -1.5708
+polygon = PackedVector2Array(0, 0, 0, 435.2, 5, 435.2, 5, 0)
+script = ExtResource("1_drxbf")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
+
+[node name="Plinks" type="StaticBody2D" parent="."]
+position = Vector2(214, 286)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Plink" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-166, -196)
+
+[node name="Plink2" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-118, -196)
+
+[node name="Plink3" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-68, -196)
+
+[node name="Plink4" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-20, -196)
+
+[node name="Plink5" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(28, -196)
+
+[node name="Plink6" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(76, -196)
+
+[node name="Plink7" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(126, -196)
+
+[node name="Plink8" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(174, -196)
+
+[node name="Plink10" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-148, -130)
+
+[node name="Plink11" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-98, -130)
+
+[node name="Plink12" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-50, -130)
+
+[node name="Plink13" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-2.00001, -130)
+
+[node name="Plink14" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(46, -130)
+
+[node name="Plink15" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(96, -130)
+
+[node name="Plink16" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(144, -130)
+
+[node name="Plink9" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-166, -66)
+
+[node name="Plink17" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-118, -66)
+
+[node name="Plink18" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-68, -66)
+
+[node name="Plink19" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-20, -66)
+
+[node name="Plink20" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(28, -66)
+
+[node name="Plink21" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(76, -66)
+
+[node name="Plink22" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(126, -66)
+
+[node name="Plink23" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(174, -66)
+
+[node name="Plink24" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-148, -1.71661e-05)
+
+[node name="Plink25" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-98, -1.71661e-05)
+
+[node name="Plink26" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-50, -1.71661e-05)
+
+[node name="Plink27" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-2.00001, -1.71661e-05)
+
+[node name="Plink28" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(46, -1.71661e-05)
+
+[node name="Plink29" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(96, -1.71661e-05)
+
+[node name="Plink30" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(144, -1.71661e-05)
+
+[node name="Plink31" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-166, 62)
+
+[node name="Plink32" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-118, 62)
+
+[node name="Plink33" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-68, 62)
+
+[node name="Plink34" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-20, 62)
+
+[node name="Plink35" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(28, 62)
+
+[node name="Plink36" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(76, 62)
+
+[node name="Plink37" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(126, 62)
+
+[node name="Plink38" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(174, 62)
+
+[node name="Plink39" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-148, 128)
+
+[node name="Plink40" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-98, 128)
+
+[node name="Plink41" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-50, 128)
+
+[node name="Plink42" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-2.00001, 128)
+
+[node name="Plink43" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(46, 128)
+
+[node name="Plink44" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(96, 128)
+
+[node name="Plink45" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(144, 128)
+
+[node name="Plink46" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(-91, 227)
+scale = Vector2(24.36, 24.36)
+
+[node name="Plink47" parent="Plinks" instance=ExtResource("3_oir0l")]
+position = Vector2(92, 227)
+scale = Vector2(24.36, 24.36)
+
+[node name="DropperPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_oeo1h")
+
+[node name="DropperFollow" type="PathFollow2D" parent="DropperPath"]
+position = Vector2(25, 0)
+rotates = false
+
+[node name="Dropper" type="Node2D" parent="DropperPath/DropperFollow"]
+script = ExtResource("4_x2s3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="DropperPath/DropperFollow/Dropper"]
+scale = Vector2(0.279687, 0.279688)
+texture = ExtResource("3_7wq0u")
+
+[node name="DropperMarker" type="Marker2D" parent="DropperPath/DropperFollow/Dropper"]
+position = Vector2(2, 28)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 452.0
+offset_top = 176.0
+offset_right = 651.0
+offset_bottom = 225.0
+text = "will make this better later
+- sylvia"
+
+[connection signal="body_entered" from="PrizeAreas/Prize10" to="." method="_on_prize_10_body_entered"]
+[connection signal="body_entered" from="PrizeAreas/Prize10_1" to="." method="_on_prize_10_1_body_entered"]
+[connection signal="body_entered" from="PrizeAreas/Prize5" to="." method="_on_prize_5_body_entered"]

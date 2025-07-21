@@ -38,6 +38,9 @@ signal player_died
 ## use change_area() to change the bg!!!! 
 signal area_changed
 
+## im lazy so im putting this here
+signal spawn_plinko_ball
+
 # function to call when you buy a buyable
 func buy_buyable(id: String) -> void:
 	buyable_bought_list.append(id)

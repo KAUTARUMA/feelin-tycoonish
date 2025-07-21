@@ -68,7 +68,7 @@ func _on_button_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 	if event is not InputEventMouseButton: return
 	
 	# if its a press event, and the button is the left mouse button (1)
-	if event.pressed && event.button_index == 1:
+	if event.pressed && event.button_index == 1 && visible:
 		_buy_buyable()
 
 func _buy_buyable():
