@@ -14,7 +14,7 @@ polygon = PackedVector2Array(-169.889, 446.444, -127.936, 446.444, -83, 446.444,
 script = ExtResource("1_75ad7")
 metadata/_custom_type_script = "uid://c8jubnsknh8nd"
 
-[node name="Spear" type="StaticBody2D" parent="."]
+[node name="Spear" type="AnimatableBody2D" parent="."]
 position = Vector2(-0.012413, 0.99823)
 rotation = 1.5756
 scale = Vector2(0.0805774, 0.547661)
