@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cm0nnp5vaiqge"]
+[gd_scene load_steps=24 format=3 uid="uid://cm0nnp5vaiqge"]
 
 [ext_resource type="AudioStream" uid="uid://bqbypcnlhpajt" path="res://map/start/casino/shun-ran john instrumental.mp3" id="1_01vfd"]
 [ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://map/start/casino/Table_BigChips_BlueLose.png" id="2_1yep1"]
@@ -10,9 +10,17 @@
 [ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
 [ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://map/start/casino/cameos/Miguel-Feelin.svg" id="9_mcf8t"]
 [ext_resource type="Script" uid="uid://n052ynpknfvm" path="res://map/start/casino/basketball.gd" id="10_dd1rw"]
+[ext_resource type="Texture2D" uid="uid://dsiq3dhddd3fd" path="res://map/start/sockzone/fat chunks.png" id="10_j6btg"]
 [ext_resource type="Script" uid="uid://mc1cjwdprghw" path="res://addons/godot_texture_atlas/atlas_sprite.gd" id="11_01vfd"]
+[ext_resource type="Script" uid="uid://ctutkpnptsse5" path="res://map/start/sockzone/fat_chunks_2.gd" id="11_bjm4i"]
 [ext_resource type="JSON" path="res://map/start/casino/basketball/Animation.json" id="12_1yep1"]
+[ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="12_bo60h"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="12_ylwr5"]
+[ext_resource type="AudioStream" uid="uid://besbnqrwj6mta" path="res://map/start/casino/razby talk empic.mp3" id="13_m1473"]
+[ext_resource type="Texture2D" uid="uid://dhtwsfrvme47n" path="res://map/start/casino/cak.png" id="14_m1473"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo60h"]
+size = Vector2(596.059, 460.35)
 
 [sub_resource type="Animation" id="Animation_33p1h"]
 resource_name = "IdleLook"
@@ -119,6 +127,29 @@ volume_db = -10.895
 autoplay = true
 parameters/looping = true
 
+[node name="fat chunks 2" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1536, -46)
+rotation = 0.0879528
+scale = Vector2(0.361961, 0.485082)
+texture = ExtResource("10_j6btg")
+script = ExtResource("11_bjm4i")
+
+[node name="TalkingSpeechBubble" parent="Casino Props/fat chunks 2" instance=ExtResource("12_bo60h")]
+offset_left = 20.0
+offset_top = -156.0
+offset_right = 200.0
+offset_bottom = -80.0
+sound = ExtResource("13_m1473")
+text = "i am ouiyer"
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="Casino Props/fat chunks 2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Casino Props/fat chunks 2/TalkHitbox"]
+position = Vector2(-8.9873, 26.9984)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bo60h")
+
 [node name="TableBigChipsBlueLose" type="Sprite2D" parent="Casino Props"]
 position = Vector2(0, -7.00003)
 texture = ExtResource("2_1yep1")
@@ -150,6 +181,11 @@ z_index = -1
 position = Vector2(-458, -77)
 rotation = 0.0879528
 texture = ExtResource("9_mcf8t")
+
+[node name="Cak" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1648, -54)
+scale = Vector2(0.376114, 0.323751)
+texture = ExtResource("14_m1473")
 
 [node name="Basketball Walker" type="Node2D" parent="."]
 position = Vector2(169, -68)
@@ -185,3 +221,5 @@ position = Vector2(-67, -547)
 color = Color(0.00392157, 0.196078, 0.129412, 1)
 polygon = PackedVector2Array(-105, 656, 2718, 667, 2720, 789, -105, 790)
 script = ExtResource("12_ylwr5")
+
+[connection signal="body_entered" from="Casino Props/fat chunks 2/TalkHitbox" to="Casino Props/fat chunks 2" method="_on_talk_hitbox_body_entered"]

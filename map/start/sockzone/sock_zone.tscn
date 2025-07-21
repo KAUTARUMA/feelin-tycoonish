@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqt7ggm3eiiq7"]
+[gd_scene load_steps=24 format=3 uid="uid://bqt7ggm3eiiq7"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfa7ulse7q" path="res://map/start/sockzone/house.png" id="1_1f1e4"]
 [ext_resource type="Texture2D" uid="uid://nsqeutbe0s4e" path="res://map/start/sockzone/sox2.png" id="2_cjukr"]
@@ -16,8 +16,6 @@
 [ext_resource type="Script" uid="uid://nj7wbojexj05" path="res://map/start/sockzone/stewie_buyable.gd" id="14_dqs1e"]
 [ext_resource type="Texture2D" uid="uid://drcw616gos0m" path="res://map/buyables/stewie.png" id="15_mnmdx"]
 [ext_resource type="Texture2D" uid="uid://ce4op4sb3e7iv" path="res://map/buyables/note.png" id="16_mnmdx"]
-[ext_resource type="Texture2D" uid="uid://dsiq3dhddd3fd" path="res://map/start/sockzone/fat chunks.png" id="17_dglsg"]
-[ext_resource type="Script" uid="uid://ctutkpnptsse5" path="res://map/start/sockzone/fat_chunks_2.gd" id="18_mduxt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n3xu8"]
 font_size = 24
@@ -195,9 +193,3 @@ gravity = Vector2(0, -980)
 initial_velocity_max = 272.73
 angular_velocity_min = -661.82
 angular_velocity_max = 618.18
-
-[node name="fat chunks 2" type="Sprite2D" parent="."]
-position = Vector2(1725, 947)
-scale = Vector2(0.729245, 0.72859)
-texture = ExtResource("17_dglsg")
-script = ExtResource("18_mduxt")
