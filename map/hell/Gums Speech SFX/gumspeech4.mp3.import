@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn23ip0wle31f"
+path="res://.godot/imported/gumspeech4.mp3-3ae6aa1a2272403403b84c8512bda787.mp3str"
+
+[deps]
+
+source_file="res://map/hell/Gums Speech SFX/gumspeech4.mp3"
+dest_files=["res://.godot/imported/gumspeech4.mp3-3ae6aa1a2272403403b84c8512bda787.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

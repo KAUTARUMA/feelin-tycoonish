@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cmg6jlrsx2q7u"]
+[gd_scene load_steps=26 format=3 uid="uid://cmg6jlrsx2q7u"]
 
 [ext_resource type="Script" uid="uid://bi7q8kx45r5ul" path="res://map/buyables/death_buyable.gd" id="1_05ulx"]
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="2_4hjx4"]
@@ -19,8 +19,15 @@
 [ext_resource type="Script" uid="uid://bbv8q4kwkanh2" path="res://map/hell/dawko_1.gd" id="16_4hjx4"]
 [ext_resource type="Texture2D" uid="uid://cfqdcb4gp45i6" path="res://map/hell/costume4.svg" id="17_0gfp7"]
 [ext_resource type="Texture2D" uid="uid://big5vvkqvlqx4" path="res://map/hell/costume1.svg" id="19_oobf3"]
+[ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="20_bqwfh"]
+[ext_resource type="Script" uid="uid://dwjkt3u5rmk8y" path="res://map/hell/gums.gd" id="20_svslg"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="20_wgn6p"]
 [ext_resource type="PackedScene" uid="uid://csm6hrevkf01v" path="res://map/hell/horsehell/horse_hell.tscn" id="22_bqwfh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0jq6"]
+size = Vector2(18.0478, 383.849)
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_svslg"]
 
 [node name="Hell" type="Node2D"]
 
@@ -273,10 +280,32 @@ scale = Vector2(1.87901, 1.95352)
 texture = ExtResource("17_0gfp7")
 
 [node name="Gums" type="Sprite2D" parent="the sponges/Node2D"]
-position = Vector2(6400.35, -298.039)
+position = Vector2(6400, -456)
 scale = Vector2(2.27173, 2.27173)
 texture = ExtResource("19_oobf3")
-script = ExtResource("16_4hjx4")
+script = ExtResource("20_svslg")
+
+[node name="TalkingSpeechBubble" parent="the sponges/Node2D/Gums" instance=ExtResource("20_bqwfh")]
+anchors_preset = -1
+anchor_right = 0.126
+anchor_bottom = 0.151
+offset_left = 12.6114
+offset_top = -81.4186
+offset_right = 183.917
+offset_bottom = -9.49856
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="the sponges/Node2D/Gums"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the sponges/Node2D/Gums/TalkHitbox"]
+position = Vector2(-363.532, 18.9283)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i0jq6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="the sponges/Node2D/Gums"]
+stream = SubResource("AudioStreamPolyphonic_svslg")
+volume_db = 8.914
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
@@ -378,3 +407,5 @@ metadata/_custom_type_script = "uid://c8jubnsknh8nd"
 
 [node name="HorseHell" parent="." instance=ExtResource("22_bqwfh")]
 position = Vector2(9542, -913)
+
+[connection signal="body_entered" from="the sponges/Node2D/Gums/TalkHitbox" to="the sponges/Node2D/Gums" method="_on_talk_hitbox_body_entered"]
