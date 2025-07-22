@@ -1,15 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmubwil3dph06"]
+[gd_scene load_steps=19 format=3 uid="uid://cmubwil3dph06"]
 
 [ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_2eqjb"]
 [ext_resource type="Texture2D" uid="uid://csfkused7fqh3" path="res://map/buyables/Gurt/gurtgreen.png" id="2_0q1kr"]
 [ext_resource type="Script" path="res://map/start/gurt_buyable.gd" id="2_ap4hh"]
 [ext_resource type="AudioStream" uid="uid://b5vtqqalnrl20" path="res://map/buyables/Gurt/evil gurt laugh.ogg" id="3_gqkmp"]
-[ext_resource type="PackedScene" path="res://map/buyables/walker/walker.tscn" id="8_d02tw"]
+[ext_resource type="PackedScene" uid="uid://bj7e4cpuy2wsi" path="res://map/buyables/walker/walker.tscn" id="8_d02tw"]
 [ext_resource type="Script" uid="uid://76txqpak8igv" path="res://map/start/gurt.gd" id="8_jd16q"]
 [ext_resource type="PackedScene" uid="uid://clgn3yrm4ftfj" path="res://map/start/cpepsuscary/cpepsu_scary.tscn" id="13_5622p"]
+[ext_resource type="PackedScene" uid="uid://bq1734ll661q7" path="res://map/buyables/plinko/plinko.tscn" id="16_gtwnl"]
 [ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="17_oawyc"]
 [ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="19_5maui"]
-[ext_resource type="PackedScene" path="res://map/start/stage/stage.tscn" id="21_skgmr"]
+[ext_resource type="PackedScene" uid="uid://yv2iflmbo7bh" path="res://map/start/stage/stage.tscn" id="21_skgmr"]
 [ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="24_5li7y"]
 [ext_resource type="Texture2D" uid="uid://rew1fnyy15mf" path="res://map/start/casino hell sign.png" id="26_7cpad"]
 [ext_resource type="Texture2D" uid="uid://bta7xcejuxnx0" path="res://map/start/FNAF_WORLD.EXE_0x6D1D53B3.png" id="26_yg3ev"]
@@ -32,6 +33,14 @@ position = Vector2(2705, -4)
 position = Vector2(1660, 22)
 
 [node name="StartStuff" type="Node2D" parent="."]
+
+[node name="Parallax2D3" type="Parallax2D" parent="StartStuff"]
+z_index = -3
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="Plinko" parent="StartStuff/Parallax2D3" instance=ExtResource("16_gtwnl")]
+position = Vector2(710, -61)
+id = "plinko"
 
 [node name="GurtButton" parent="StartStuff" instance=ExtResource("1_2eqjb")]
 position = Vector2(1715, 102)
@@ -90,38 +99,46 @@ price = 16
 requires = Array[String](["walker0_upgrade0"])
 
 [node name="Walker1Button" parent="StartStuff" instance=ExtResource("1_2eqjb")]
-position = Vector2(1098, 129)
+position = Vector2(73, 175)
 buyable_id = "walker1"
 buyable_name = "Potasium Walker"
 price = 120
 requires = Array[String](["walker0_upgrade1"])
 
 [node name="Walker1UpgradeButton0" parent="StartStuff" instance=ExtResource("1_2eqjb")]
-position = Vector2(1098, 129)
+position = Vector2(73, 175)
 buyable_id = "walker1_upgrade0"
 buyable_name = "Faster Production Speed"
 price = 160
 requires = Array[String](["walker1"])
 
 [node name="Walker1UpgradeButton1" parent="StartStuff" instance=ExtResource("1_2eqjb")]
-position = Vector2(1098, 129)
+position = Vector2(73, 175)
 buyable_id = "walker1_upgrade1"
 buyable_name = "More Potasi-Value"
 price = 240
 requires = Array[String](["walker1_upgrade0"])
 
+[node name="PlinkoButton" parent="StartStuff" instance=ExtResource("1_2eqjb")]
+position = Vector2(1305, 127)
+buyable_id = "plinko"
+buyable_name = "Plinko"
+price = 50
+requires = Array[String](["walker0_upgrade1"])
+
 [node name="Parallax2D" type="Parallax2D" parent="StartStuff"]
+z_index = -1
 scroll_scale = Vector2(0.9, 0.9)
 
 [node name="Walker0" parent="StartStuff/Parallax2D" instance=ExtResource("8_d02tw")]
 position = Vector2(479, 138)
 
 [node name="Parallax2D2" type="Parallax2D" parent="StartStuff"]
+z_index = -2
 scroll_scale = Vector2(0.8, 0.8)
 
 [node name="Walker1" parent="StartStuff/Parallax2D2" instance=ExtResource("8_d02tw")]
 modulate = Color(0.964706, 0.933333, 0.917647, 1)
-z_index = -1
 position = Vector2(566, 156)
 scale = Vector2(0.8, 0.8)
 id = "walker1"

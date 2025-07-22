@@ -90,6 +90,10 @@ debug_slow={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="Plinko"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

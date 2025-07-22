@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://7amgl6nwgsjw"]
+
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="1_xesj6"]
+
+[node name="Plink" type="Polygon2D"]
+scale = Vector2(10, 10)
+polygon = PackedVector2Array(0, -1, 1, 0, 0, 1, -1, 0)
+script = ExtResource("1_xesj6")
+metadata/_custom_type_script = "uid://c8jubnsknh8nd"
