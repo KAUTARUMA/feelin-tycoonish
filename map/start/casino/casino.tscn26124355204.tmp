@@ -1,0 +1,323 @@
+[gd_scene load_steps=35 format=3 uid="uid://cm0nnp5vaiqge"]
+
+[ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://map/start/casino/Table_BigChips_BlueLose.png" id="2_1yep1"]
+[ext_resource type="Texture2D" uid="uid://bu5qtb2iskkx8" path="res://map/start/casino/Table_Bowling.png" id="3_tedpa"]
+[ext_resource type="Texture2D" uid="uid://co2d6btwefehx" path="res://map/start/casino/Table_Parappa.png" id="4_j6btg"]
+[ext_resource type="Texture2D" uid="uid://5de26mevsj2s" path="res://map/start/casino/Table_Vacant.png" id="5_bjm4i"]
+[ext_resource type="Texture2D" uid="uid://dakgmm1ql017p" path="res://map/start/casino/Table_Standard.png" id="6_bo60h"]
+[ext_resource type="Texture2D" uid="uid://63el1v6fqg4w" path="res://map/start/casino/cameos/Trafeus-Feelin.svg" id="7_m1473"]
+[ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
+[ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://map/start/casino/cameos/Miguel-Feelin.svg" id="9_mcf8t"]
+[ext_resource type="Texture2D" uid="uid://w64mjbx2scru" path="res://map/start/casino/cameos/woahmarbles2.svg" id="9_tedpa"]
+[ext_resource type="Script" uid="uid://n052ynpknfvm" path="res://map/start/casino/basketball.gd" id="10_dd1rw"]
+[ext_resource type="Texture2D" uid="uid://dsiq3dhddd3fd" path="res://map/start/casino/razby.png" id="10_j6btg"]
+[ext_resource type="Script" uid="uid://mc1cjwdprghw" path="res://addons/godot_texture_atlas/atlas_sprite.gd" id="11_01vfd"]
+[ext_resource type="Script" uid="uid://ctutkpnptsse5" path="res://map/start/casino/razby.gd" id="11_bjm4i"]
+[ext_resource type="JSON" path="res://map/start/casino/basketball/Animation.json" id="12_1yep1"]
+[ext_resource type="PackedScene" uid="uid://ca1pjtml30rad" path="res://global_assets/speech_bubble/talking_speech_bubble.tscn" id="12_bo60h"]
+[ext_resource type="Script" uid="uid://c8jubnsknh8nd" path="res://global_assets/polygon_collision_and_shape.gd" id="12_ylwr5"]
+[ext_resource type="AudioStream" uid="uid://besbnqrwj6mta" path="res://map/start/casino/razby talk empic.mp3" id="13_m1473"]
+[ext_resource type="Texture2D" uid="uid://dhqnvmytkyq72" path="res://map/start/casino/cameos/square woahening.svg" id="14_j6btg"]
+[ext_resource type="Texture2D" uid="uid://dhtwsfrvme47n" path="res://map/start/casino/cak.png" id="14_m1473"]
+[ext_resource type="PackedScene" uid="uid://di0tislyar5yk" path="res://map/buyables/button/gamble_button.tscn" id="20_mcf8t"]
+[ext_resource type="Texture2D" uid="uid://d4dvolb0hmgn7" path="res://map/start/casino/buster trampoline.png" id="21_bhste"]
+[ext_resource type="Script" uid="uid://de7j141xed3p4" path="res://map/buyables/buyable.gd" id="21_ylwr5"]
+[ext_resource type="Script" uid="uid://dwxvj81mtce8k" path="res://map/start/casino/buster_trampoline.gd" id="22_xotn4"]
+[ext_resource type="FontFile" uid="uid://djxpmspmedw8f" path="res://global_assets/font/HelveticaNeueBoldItalic.otf" id="24_gv57t"]
+[ext_resource type="AudioStream" uid="uid://bidwy7bak16wl" path="res://map/start/casino/buster_jump.ogg" id="25_gv57t"]
+[ext_resource type="FontFile" uid="uid://gedpmy7er5qx" path="res://global_assets/font/HelveticaNeueHeavyItalic.otf" id="26_sm65m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo60h"]
+size = Vector2(596.059, 460.35)
+
+[sub_resource type="Animation" id="Animation_33p1h"]
+resource_name = "IdleLook"
+length = 2.62501
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:cur_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 63]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["look"]
+}
+
+[sub_resource type="Animation" id="Animation_lxd1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["walking"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:cur_frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_d5ykx"]
+resource_name = "Walking"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["walking"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:cur_frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sc8c2"]
+_data = {
+&"IdleLook": SubResource("Animation_33p1h"),
+&"RESET": SubResource("Animation_lxd1a"),
+&"Walking": SubResource("Animation_d5ykx")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_futrp"]
+size = Vector2(244, 22)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sm65m"]
+font = ExtResource("24_gv57t")
+font_size = 31
+font_color = Color(0.8, 0, 0.729412, 1)
+shadow_size = 2
+shadow_color = Color(0.8, 0, 0.729412, 0.486275)
+shadow_offset = Vector2(4, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_futrp"]
+font = ExtResource("26_sm65m")
+font_size = 61
+font_color = Color(0.443137, 1, 1, 1)
+
+[node name="Casino" type="Node2D"]
+
+[node name="Casino Props" type="Node2D" parent="."]
+position = Vector2(2453, -20)
+
+[node name="razby" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1536, -46)
+rotation = 0.0879528
+scale = Vector2(0.361961, 0.485082)
+texture = ExtResource("10_j6btg")
+script = ExtResource("11_bjm4i")
+
+[node name="TalkingSpeechBubble" parent="Casino Props/razby" instance=ExtResource("12_bo60h")]
+offset_left = 20.0
+offset_top = -156.0
+offset_right = 200.0
+offset_bottom = -80.0
+sound = ExtResource("13_m1473")
+text = "i am ouiyer"
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkHitbox" type="Area2D" parent="Casino Props/razby"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Casino Props/razby/TalkHitbox"]
+position = Vector2(-8.9873, 26.9984)
+shape = SubResource("RectangleShape2D_bo60h")
+
+[node name="TableBigChipsBlueLose" type="Sprite2D" parent="Casino Props"]
+position = Vector2(0, -7.00003)
+texture = ExtResource("2_1yep1")
+
+[node name="TableBowling" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-532, 2.99997)
+texture = ExtResource("3_tedpa")
+
+[node name="TableParappa" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1115, 15)
+texture = ExtResource("4_j6btg")
+
+[node name="TableVacant" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-2234, 14)
+texture = ExtResource("5_bjm4i")
+
+[node name="TableStandard" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1686, 13)
+texture = ExtResource("6_bo60h")
+
+[node name="Trafeus-feelin" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-631, -110)
+texture = ExtResource("7_m1473")
+script = ExtResource("8_mm77s")
+
+[node name="Miguel-feelin" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-458, -77)
+rotation = 0.0879528
+texture = ExtResource("9_mcf8t")
+
+[node name="Woahmarbles2" type="Sprite2D" parent="Casino Props"]
+z_index = -1
+position = Vector2(-1203, -107)
+rotation = -0.0524317
+texture = ExtResource("9_tedpa")
+
+[node name="Cak" type="Sprite2D" parent="Casino Props"]
+position = Vector2(-1648, -54)
+scale = Vector2(0.376114, 0.323751)
+texture = ExtResource("14_m1473")
+
+[node name="Basketball Walker" type="Node2D" parent="."]
+position = Vector2(169, -68)
+script = ExtResource("10_dd1rw")
+
+[node name="Basketball" type="Node2D" parent="Basketball Walker"]
+position = Vector2(-1, 0)
+scale = Vector2(0.642388, 0.642389)
+script = ExtResource("11_01vfd")
+symbol = "walking"
+animation_json = ExtResource("12_1yep1")
+metadata/_custom_type_script = "uid://mc1cjwdprghw"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Basketball Walker"]
+root_node = NodePath("../Basketball")
+libraries = {
+&"": SubResource("AnimationLibrary_sc8c2")
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(169, -68)
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(-67, -443)
+color = Color(0.105882, 0.0941176, 0.0627451, 1)
+polygon = PackedVector2Array(-74, 617, 2677, 620, 2677, 789, -71, 790)
+script = ExtResource("12_ylwr5")
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(-67, -547)
+color = Color(0.00392157, 0.196078, 0.129412, 1)
+polygon = PackedVector2Array(-105, 656, 2718, 667, 2720, 789, -105, 790)
+script = ExtResource("12_ylwr5")
+
+[node name="SquareWoahening" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1431, -81)
+rotation = 0.150091
+texture = ExtResource("14_j6btg")
+
+[node name="GambleButton" parent="." instance=ExtResource("20_mcf8t")]
+position = Vector2(1635, -340)
+min_price = 9
+max_price = 99
+buyable_id = "casinosecondfloor"
+buyable_name = "Second Floor"
+
+[node name="SecondFloor" type="Node2D" parent="."]
+script = ExtResource("21_ylwr5")
+id = "casinosecondfloor"
+metadata/_custom_type_script = "uid://de7j141xed3p4"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="SecondFloor"]
+position = Vector2(196, -1259)
+
+[node name="PolygonCollisionAndShape2" type="Polygon2D" parent="SecondFloor/StaticBody2D2"]
+z_index = -1
+position = Vector2(-67, -443)
+color = Color(0.105882, 0.0941176, 0.0627451, 1)
+polygon = PackedVector2Array(-74, 617, 1654, 620, 1656, 789, -71, 790)
+script = ExtResource("12_ylwr5")
+
+[node name="PolygonCollisionAndShape3" type="Polygon2D" parent="SecondFloor/StaticBody2D2"]
+z_index = -1
+position = Vector2(-67, -547)
+color = Color(0.00392157, 0.196078, 0.129412, 1)
+polygon = PackedVector2Array(-105, 656, 1691, 667, 1683, 789, -105, 790)
+script = ExtResource("12_ylwr5")
+
+[node name="BusterTrampoline" type="Node2D" parent="SecondFloor"]
+position = Vector2(2204, -6)
+script = ExtResource("22_xotn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="SecondFloor/BusterTrampoline"]
+texture_filter = 1
+scale = Vector2(1.55775, 1.35676)
+texture = ExtResource("21_bhste")
+
+[node name="Area2D" type="Area2D" parent="SecondFloor/BusterTrampoline"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondFloor/BusterTrampoline/Area2D"]
+position = Vector2(-5, -15)
+shape = SubResource("RectangleShape2D_futrp")
+
+[node name="Label" type="Label" parent="SecondFloor/BusterTrampoline"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = -162.0
+offset_right = 94.0
+offset_bottom = -66.0
+grow_horizontal = 2
+text = "USE THE BUSTER TRAMPOLINE"
+label_settings = SubResource("LabelSettings_sm65m")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="SecondFloor/BusterTrampoline"]
+stream = ExtResource("25_gv57t")
+
+[node name="Label" type="Label" parent="SecondFloor"]
+offset_left = 710.0
+offset_top = -1370.0
+offset_right = 1236.0
+offset_bottom = -1313.0
+text = "need to add stuff?"
+label_settings = SubResource("LabelSettings_futrp")
+
+[connection signal="body_entered" from="Casino Props/razby/TalkHitbox" to="Casino Props/razby" method="_on_talk_hitbox_body_entered"]
+[connection signal="body_entered" from="SecondFloor/BusterTrampoline/Area2D" to="SecondFloor/BusterTrampoline" method="_on_area_2d_body_entered"]

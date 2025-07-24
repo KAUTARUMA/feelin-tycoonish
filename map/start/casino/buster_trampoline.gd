@@ -11,6 +11,10 @@ func _ready():
 		await get_tree().create_timer(0.25).timeout
 
 func _on_area_2d_body_entered(body):
+	if body.velocity.y < 0 :
+		return
+	
+	body.global_position.y = global_position.y - 20
 	body.velocity.y = UPWARDS_VELOCITY
 	
 	audio_player.stop()
