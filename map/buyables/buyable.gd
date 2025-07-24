@@ -7,6 +7,7 @@ const COIN_SFX: Array[AudioStream] = [preload("res://map/buyables/sfx/coin1.ogg"
 # make sure this is the same as the button ID!!
 @export var id: String = ""
 @export var stay_on_buy: bool = false
+@export var start_visible: bool = false
 
 var has_been_bought:bool = false
 
@@ -19,7 +20,7 @@ func _ready() -> void:
 func _check_if_bought():
 	if not Game.buyable_bought_list.has(id):
 		has_been_bought = false
-		visible = false
+		visible = start_visible
 		process_mode = Node.PROCESS_MODE_DISABLED
 		return # we havent bought this buyable yet, stop this function
 		
