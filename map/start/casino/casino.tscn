@@ -253,6 +253,7 @@ texture = ExtResource("14_j6btg")
 [node name="GambleButton" parent="." instance=ExtResource("20_mcf8t")]
 position = Vector2(1635, -340)
 min_price = 9
+max_price = 99
 buyable_id = "casinosecondfloor"
 buyable_name = "Second Floor"
 

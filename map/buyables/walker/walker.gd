@@ -7,6 +7,8 @@ extends Buyable
 var walking_time: float = 3.0
 var value: int = 2
 
+var can_plinko: bool = false
+
 func _ready():
 	super()
 	Game.buyable_bought.connect(_buyable_bought)
@@ -17,6 +19,9 @@ func _buyable_bought():
 	
 	if Game.buyable_bought_list.has(id + "_upgrade1"):
 		value = 4
+		
+	if Game.buyable_bought_list.has("plinko"):
+		can_plinko = true
 
 func _on_buy():
 	potasium.position = Vector2(-190, -30)
@@ -48,7 +53,8 @@ func _on_buy():
 		# this function takes in global coordinates, so we need to convert it accordingly
 		_play_coin_sound(to_global(Vector2(259, -45)))
 		# emits the spawn plinko ball signal
-		Game.spawn_plinko_ball.emit()
+		if can_plinko:
+			Game.spawn_plinko_ball.emit()
 		
 		# plays his idle animation
 		potasium.play("idle")
