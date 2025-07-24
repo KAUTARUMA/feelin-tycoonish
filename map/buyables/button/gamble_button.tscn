@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://di0tislyar5yk"]
+
+[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="1_ofckc"]
+[ext_resource type="Script" uid="uid://bajxopd0h8hxo" path="res://map/buyables/button/gamble_button.gd" id="2_2nnsc"]
+[ext_resource type="Script" uid="uid://baho18k618nlj" path="res://map/buyables/button/gamble_text_name.gd" id="3_8xf7l"]
+
+[node name="GambleButton" instance=ExtResource("1_ofckc")]
+script = ExtResource("2_2nnsc")
+min_price = 0
+max_price = 100
+cycle_time = 0.35
+
+[node name="TextName" parent="." index="1"]
+text = "Buy "
+script = ExtResource("3_8xf7l")
+
+[node name="Price" parent="TextName" index="1"]
+text = "-1$"
