@@ -44,7 +44,7 @@ script = ExtResource("1_1koha")
 [node name="Hell" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
 visible = false
 script = ExtResource("2_tyq1r")
-music = NodePath("Hell/AudioStreamPlayer2D")
+music = NodePath("AudioStreamPlayer2D")
 
 [node name="Hell" type="Parallax2D" parent="Hell"]
 z_index = -4096
@@ -58,8 +58,9 @@ material = SubResource("ShaderMaterial_7lyie")
 scale = Vector2(0.668371, 0.748612)
 texture = ExtResource("2_efkv3")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Hell/Hell"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Hell"]
 stream = ExtResource("4_p7cq6")
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
@@ -107,6 +108,7 @@ flip_h = true
 flip_v = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Start"]
+volume_db = -80.0
 bus = &"Music"
 
 [node name="Casino" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]
@@ -154,6 +156,7 @@ texture = ExtResource("8_bfbxo")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Casino"]
 stream = ExtResource("7_65jj4")
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
@@ -165,7 +168,7 @@ music = NodePath("AudioStreamPlayer2D")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Fat"]
 stream = ExtResource("8_fatguytubasong")
-volume_db = -4.685
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
@@ -186,6 +189,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Tree"]
 stream = ExtResource("8_ntff2")
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
@@ -196,6 +200,7 @@ music = NodePath("AudioStreamPlayer2D")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Cpepsu"]
 stream = ExtResource("8_xgy1r")
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
