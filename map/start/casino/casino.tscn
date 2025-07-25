@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cm0nnp5vaiqge"]
+[gd_scene load_steps=46 format=3 uid="uid://cm0nnp5vaiqge"]
 
 [ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://map/start/casino/Table_BigChips_BlueLose.png" id="2_1yep1"]
 [ext_resource type="Texture2D" uid="uid://bu5qtb2iskkx8" path="res://map/start/casino/Table_Bowling.png" id="3_tedpa"]
@@ -19,10 +19,15 @@
 [ext_resource type="AudioStream" uid="uid://besbnqrwj6mta" path="res://map/start/casino/razby talk empic.mp3" id="13_m1473"]
 [ext_resource type="Texture2D" uid="uid://dhqnvmytkyq72" path="res://map/start/casino/cameos/square woahening.svg" id="14_j6btg"]
 [ext_resource type="Texture2D" uid="uid://dhtwsfrvme47n" path="res://map/start/casino/cak.png" id="14_m1473"]
-[ext_resource type="PackedScene" uid="uid://di0tislyar5yk" path="res://map/buyables/button/gamble_button.tscn" id="20_mcf8t"]
-[ext_resource type="Texture2D" uid="uid://d4dvolb0hmgn7" path="res://map/start/casino/buster trampoline.png" id="21_bhste"]
+[ext_resource type="PackedScene" uid="uid://di0tislyar5yk" path="res://map/buyables/button/gamble_button.tscn" id="20_GAMBL"]
+[ext_resource type="Texture2D" uid="uid://cnqdi6mfmd75t" path="res://map/start/casino/big.png" id="20_mcf8t"]
+[ext_resource type="PackedScene" uid="uid://dk3105wepu4p0" path="res://map/buyables/button/buyable_button.tscn" id="21_bhste"]
+[ext_resource type="Script" path="res://map/start/casino/cuttherope_buy.gd" id="21_d53f2"]
+[ext_resource type="Texture2D" uid="uid://d4dvolb0hmgn7" path="res://map/start/casino/buster trampoline.png" id="21_tramp"]
 [ext_resource type="Script" uid="uid://de7j141xed3p4" path="res://map/buyables/buyable.gd" id="21_ylwr5"]
 [ext_resource type="Script" uid="uid://dwxvj81mtce8k" path="res://map/start/casino/buster_trampoline.gd" id="22_xotn4"]
+[ext_resource type="AudioStream" uid="uid://bjvbn1vxgdvlb" path="res://map/start/casino/cameos/bye.mp3" id="22_ylwr5"]
+[ext_resource type="Texture2D" uid="uid://lrubu04vv0rr" path="res://map/start/casino/Fries.png" id="23_ylwr5"]
 [ext_resource type="FontFile" uid="uid://djxpmspmedw8f" path="res://global_assets/font/HelveticaNeueBoldItalic.otf" id="24_gv57t"]
 [ext_resource type="AudioStream" uid="uid://bidwy7bak16wl" path="res://map/start/casino/buster_jump.ogg" id="25_gv57t"]
 [ext_resource type="FontFile" uid="uid://gedpmy7er5qx" path="res://global_assets/font/HelveticaNeueHeavyItalic.otf" id="26_sm65m"]
@@ -124,23 +129,23 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm65m"]
-atlas = ExtResource("21_bhste")
+atlas = ExtResource("21_tramp")
 region = Rect2(0, 0, 176, 95)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_futrp"]
-atlas = ExtResource("21_bhste")
+atlas = ExtResource("21_tramp")
 region = Rect2(176, 0, 176, 95)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jb2xm"]
-atlas = ExtResource("21_bhste")
+atlas = ExtResource("21_tramp")
 region = Rect2(352, 0, 176, 95)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4sanw"]
-atlas = ExtResource("21_bhste")
+atlas = ExtResource("21_tramp")
 region = Rect2(528, 0, 176, 95)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drcgw"]
-atlas = ExtResource("21_bhste")
+atlas = ExtResource("21_tramp")
 region = Rect2(704, 0, 176, 95)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jagkq"]
@@ -298,7 +303,7 @@ position = Vector2(1431, -81)
 rotation = 0.150091
 texture = ExtResource("14_j6btg")
 
-[node name="GambleButton" parent="." instance=ExtResource("20_mcf8t")]
+[node name="GambleButton" parent="." instance=ExtResource("20_GAMBL")]
 position = Vector2(1635, -340)
 min_price = 9
 max_price = 99
@@ -368,6 +373,34 @@ offset_right = 1236.0
 offset_bottom = -1313.0
 text = "need to add stuff?"
 label_settings = SubResource("LabelSettings_futrp")
+
+[node name="Big" type="Sprite2D" parent="." node_paths=PackedStringArray("fries")]
+position = Vector2(1240, -847)
+scale = Vector2(1.71512, 1.71512)
+texture = ExtResource("20_mcf8t")
+script = ExtResource("21_d53f2")
+fries = NodePath("../Fries2")
+id = "cuttherope"
+start_visible = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Big"]
+stream = ExtResource("22_ylwr5")
+
+[node name="Fries2" type="Node2D" parent="."]
+visible = false
+position = Vector2(1518, 50)
+
+[node name="Fries" type="Sprite2D" parent="Fries2"]
+process_mode = 4
+physics_interpolation_mode = 2
+position = Vector2(-16, -243)
+texture = ExtResource("23_ylwr5")
+
+[node name="CutTheRopeButton" parent="." instance=ExtResource("21_bhste")]
+position = Vector2(1567, -839)
+buyable_id = "cuttherope"
+buyable_name = "Cut The Rope!"
+price = -50
 
 [connection signal="body_entered" from="Casino Props/razby/TalkHitbox" to="Casino Props/razby" method="_on_talk_hitbox_body_entered"]
 [connection signal="body_entered" from="SecondFloor/BusterTrampoline/Area2D" to="SecondFloor/BusterTrampoline" method="_on_area_2d_body_entered"]

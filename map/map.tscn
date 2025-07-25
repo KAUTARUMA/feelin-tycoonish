@@ -44,6 +44,7 @@ script = ExtResource("3_4hjbm")
 shape = SubResource("WorldBoundaryShape2D_a0dt8")
 
 [node name="Areas" type="Node2D" parent="."]
+visible = false
 
 [node name="StartArea" type="Area2D" parent="Areas"]
 script = ExtResource("6_7lyie")
