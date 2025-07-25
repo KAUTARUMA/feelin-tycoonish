@@ -300,7 +300,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="the sponges/Node2D/Gums/TalkHitbox"]
 position = Vector2(-363.532, 18.9283)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i0jq6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="the sponges/Node2D/Gums"]

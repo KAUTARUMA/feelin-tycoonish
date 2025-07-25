@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var label = $Label
 @onready var audio_player = $AudioPlayer
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 func _ready():
 	while true:
@@ -16,5 +17,10 @@ func _on_area_2d_body_entered(body):
 	
 	body.velocity.y = UPWARDS_VELOCITY
 	
-	audio_player.stop()
+	sprite_2d.play("jump")
+	
 	audio_player.play()
+	
+	await audio_player.finished
+	
+	sprite_2d.play("default")

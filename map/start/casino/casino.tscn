@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cm0nnp5vaiqge"]
+[gd_scene load_steps=41 format=3 uid="uid://cm0nnp5vaiqge"]
 
 [ext_resource type="Texture2D" uid="uid://btsr615be1k0w" path="res://map/start/casino/Table_BigChips_BlueLose.png" id="2_1yep1"]
 [ext_resource type="Texture2D" uid="uid://bu5qtb2iskkx8" path="res://map/start/casino/Table_Bowling.png" id="3_tedpa"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5de26mevsj2s" path="res://map/start/casino/Table_Vacant.png" id="5_bjm4i"]
 [ext_resource type="Texture2D" uid="uid://dakgmm1ql017p" path="res://map/start/casino/Table_Standard.png" id="6_bo60h"]
 [ext_resource type="Texture2D" uid="uid://63el1v6fqg4w" path="res://map/start/casino/cameos/Trafeus-Feelin.svg" id="7_m1473"]
-[ext_resource type="Script" uid="uid://bmqfltadq22xd" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
+[ext_resource type="Script" path="res://map/start/trafeus_feelin.gd" id="8_mm77s"]
 [ext_resource type="Texture2D" uid="uid://bntafna06mjgd" path="res://map/start/casino/cameos/Miguel-Feelin.svg" id="9_mcf8t"]
 [ext_resource type="Texture2D" uid="uid://w64mjbx2scru" path="res://map/start/casino/cameos/woahmarbles2.svg" id="9_tedpa"]
 [ext_resource type="Script" uid="uid://n052ynpknfvm" path="res://map/start/casino/basketball.gd" id="10_dd1rw"]
@@ -122,6 +122,54 @@ _data = {
 &"RESET": SubResource("Animation_lxd1a"),
 &"Walking": SubResource("Animation_d5ykx")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm65m"]
+atlas = ExtResource("21_bhste")
+region = Rect2(0, 0, 176, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_futrp"]
+atlas = ExtResource("21_bhste")
+region = Rect2(176, 0, 176, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb2xm"]
+atlas = ExtResource("21_bhste")
+region = Rect2(352, 0, 176, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sanw"]
+atlas = ExtResource("21_bhste")
+region = Rect2(528, 0, 176, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drcgw"]
+atlas = ExtResource("21_bhste")
+region = Rect2(704, 0, 176, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jagkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm65m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_futrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb2xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sanw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drcgw")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_futrp"]
 size = Vector2(244, 22)
@@ -283,10 +331,12 @@ script = ExtResource("12_ylwr5")
 position = Vector2(2204, -6)
 script = ExtResource("22_xotn4")
 
-[node name="Sprite2D" type="Sprite2D" parent="SecondFloor/BusterTrampoline"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SecondFloor/BusterTrampoline"]
 texture_filter = 1
 scale = Vector2(1.55775, 1.35676)
-texture = ExtResource("21_bhste")
+sprite_frames = SubResource("SpriteFrames_jagkq")
+autoplay = "default"
+frame_progress = 0.433699
 
 [node name="Area2D" type="Area2D" parent="SecondFloor/BusterTrampoline"]
 
