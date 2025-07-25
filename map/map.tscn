@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdukqnlgcdg3b"]
+[gd_scene load_steps=17 format=3 uid="uid://bdukqnlgcdg3b"]
 
 [ext_resource type="PackedScene" uid="uid://cmubwil3dph06" path="res://map/start/start.tscn" id="1_a0dt8"]
 [ext_resource type="PackedScene" uid="uid://dhkfs57qbmi38" path="res://map/backgrounds/background.tscn" id="1_kffv2"]
 [ext_resource type="PackedScene" uid="uid://cmg6jlrsx2q7u" path="res://map/hell/hell.tscn" id="2_4hjbm"]
 [ext_resource type="Script" uid="uid://b7vwm3thj0fwj" path="res://map/death_barrier.gd" id="3_4hjbm"]
+[ext_resource type="PackedScene" uid="uid://cm0nnp5vaiqge" path="res://map/start/casino/casino.tscn" id="3_e8e5r"]
 [ext_resource type="PackedScene" uid="uid://pvcub5rj0pt" path="res://map/tree/tree.tscn" id="4_7lyie"]
+[ext_resource type="PackedScene" uid="uid://bqt7ggm3eiiq7" path="res://map/start/sockzone/sock_zone.tscn" id="4_112ik"]
+[ext_resource type="PackedScene" uid="uid://clgn3yrm4ftfj" path="res://map/start/cpepsuscary/cpepsu_scary.tscn" id="5_i5grx"]
 [ext_resource type="Script" uid="uid://ckss0eshbbfyq" path="res://map/background_area.gd" id="6_7lyie"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a0dt8"]
@@ -21,6 +24,9 @@ size = Vector2(17173, 4401)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8e5r"]
 size = Vector2(1934, 1658)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_112ik"]
+size = Vector2(4339, 2517)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxmgb"]
 size = Vector2(889, 618)
 
@@ -29,6 +35,14 @@ size = Vector2(889, 618)
 [node name="Backgrounds" parent="." instance=ExtResource("1_kffv2")]
 
 [node name="Start" parent="." instance=ExtResource("1_a0dt8")]
+
+[node name="Casino" parent="." instance=ExtResource("3_e8e5r")]
+position = Vector2(-3231, 464)
+
+[node name="SockZone" parent="." instance=ExtResource("4_112ik")]
+position = Vector2(2705, -4)
+
+[node name="CpepsuScary" parent="." instance=ExtResource("5_i5grx")]
 
 [node name="Hell" parent="." instance=ExtResource("2_4hjbm")]
 position = Vector2(3112, 5965)
@@ -86,8 +100,8 @@ script = ExtResource("6_7lyie")
 area_name = "Cpepsu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/CpepsuZone"]
-position = Vector2(-5609, 126)
-shape = SubResource("RectangleShape2D_kxmgb")
+position = Vector2(-5544.5, 494.5)
+shape = SubResource("RectangleShape2D_112ik")
 
 [node name="FatGuyZone" type="Area2D" parent="Areas"]
 script = ExtResource("6_7lyie")
