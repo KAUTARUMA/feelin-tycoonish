@@ -169,7 +169,6 @@ music = NodePath("AudioStreamPlayer2D")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Fat"]
 stream = ExtResource("8_fatguytubasong")
 volume_db = -80.0
-autoplay = true
 bus = &"Music"
 
 [node name="Tree" type="CanvasGroup" parent="." node_paths=PackedStringArray("music")]

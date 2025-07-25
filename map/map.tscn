@@ -22,7 +22,7 @@ size = Vector2(17173, 4401)
 size = Vector2(1934, 1658)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxmgb"]
-size = Vector2(4664, 2996)
+size = Vector2(889, 618)
 
 [node name="Map" type="Node2D"]
 
@@ -44,19 +44,17 @@ script = ExtResource("3_4hjbm")
 shape = SubResource("WorldBoundaryShape2D_a0dt8")
 
 [node name="Areas" type="Node2D" parent="."]
-visible = false
 
 [node name="StartArea" type="Area2D" parent="Areas"]
 script = ExtResource("6_7lyie")
 area_name = "Start"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/StartArea"]
-position = Vector2(2789.5, 126)
-shape = SubResource("RectangleShape2D_kffv2")
-
 [node name="feelinfarmin placeholder" type="CollisionShape2D" parent="Areas/StartArea"]
 position = Vector2(16972, 4402)
 shape = SubResource("RectangleShape2D_kffv2")
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="Areas/StartArea"]
+polygon = PackedVector2Array(-370, -1376, -390, 1665, 3802, 1584, 3798, 1376, 3796, 761, 4695, 759, 4707, 1411, 3813, 1404, 3820, 1587, 5147, 1560, 5790, 1512, 5739, 538, 5766, -1054, 5717, -1461)
 
 [node name="CasinoArea" type="Area2D" parent="Areas"]
 script = ExtResource("6_7lyie")
@@ -91,9 +89,18 @@ area_name = "Cpepsu"
 position = Vector2(-5609, 126)
 shape = SubResource("RectangleShape2D_kxmgb")
 
+[node name="FatGuyZone" type="Area2D" parent="Areas"]
+script = ExtResource("6_7lyie")
+area_name = "Fat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/FatGuyZone"]
+position = Vector2(4245.5, 1077)
+shape = SubResource("RectangleShape2D_kxmgb")
+
 [connection signal="body_shape_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Areas/StartArea" to="Areas/StartArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/CasinoArea" to="Areas/CasinoArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/HellArea" to="Areas/HellArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/TreeArea" to="Areas/TreeArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/CpepsuZone" to="Areas/CpepsuZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Areas/FatGuyZone" to="Areas/FatGuyZone" method="_on_body_entered"]

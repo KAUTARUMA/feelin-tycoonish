@@ -1,4 +1,6 @@
 extends Buyable
 
 func _on_buy():
-	pass
+	for background in Game.backgrounds:
+		if background.name == "Fat":
+			background.music.play()

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b74btp8vqqqpk" path="res://map/start/sockzone/portal.png" id="9_dglsg"]
 [ext_resource type="Script" uid="uid://clvt7ddbgp25l" path="res://map/start/sockzone/press e.gd" id="10_mduxt"]
 [ext_resource type="Texture2D" uid="uid://dtsfliorhirpg" path="res://map/start/sockzone/big fat lard.png" id="12_didc5"]
-[ext_resource type="Script" uid="uid://djwtctg4p1vdd" path="res://map/start/sockzone/stoopidfatguy.gd" id="13_x6u66"]
+[ext_resource type="Script" path="res://map/start/sockzone/stoopidfatguy.gd" id="13_x6u66"]
 [ext_resource type="Script" uid="uid://nj7wbojexj05" path="res://map/start/sockzone/stewie_buyable.gd" id="14_dqs1e"]
 [ext_resource type="Texture2D" uid="uid://drcw616gos0m" path="res://map/buyables/stewie.png" id="15_mnmdx"]
 [ext_resource type="Texture2D" uid="uid://ce4op4sb3e7iv" path="res://map/buyables/note.png" id="16_mnmdx"]
@@ -161,7 +161,27 @@ position = Vector2(780, 417)
 shape = SubResource("RectangleShape2D_gn003")
 
 [node name="Marker2D" type="Marker2D" parent="Temmie flakes reminds me of jeffy"]
-position = Vector2(1195, 1292)
+position = Vector2(1816, 1251)
+
+[node name="Temmie flakes reminds me of jeffy2" type="Area2D" parent="."]
+position = Vector2(1039, 829)
+script = ExtResource("7_mnmdx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Temmie flakes reminds me of jeffy2"]
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("ShaderMaterial_qwgkx")
+position = Vector2(780, 416.281)
+scale = Vector2(0.633664, 0.779605)
+texture = ExtResource("9_dglsg")
+script = ExtResource("10_mduxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temmie flakes reminds me of jeffy2"]
+position = Vector2(780, 417)
+shape = SubResource("RectangleShape2D_gn003")
+
+[node name="Marker2D" type="Marker2D" parent="Temmie flakes reminds me of jeffy2"]
+position = Vector2(-258, -396)
 
 [node name="stoopidfatguy" type="Sprite2D" parent="."]
 position = Vector2(1539, 1260)
